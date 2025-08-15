@@ -1,0 +1,377 @@
+/*
+-------------------------------
+Laptop Dimensions: Min Width - 1275px
+Tablet/Mobilde Dimensions: Max Width - 1274px
+-------------------------------
+*/
+
+.team {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+
+    .block {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        // background-image: url('/team_page_media/test_pic1.png');
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+
+        @media screen and (min-width: 1724px) {
+            justify-content: center;
+            width: 1725px;
+        }
+
+        .gap_section {
+            padding-top: 100px;
+            opacity: 0;
+        }
+
+        .title {
+            font-family: "Benzin-Bold";
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 
+                0 0 5px black,
+                0 0 10px black,
+                0 0 20px black;
+            background-color: black;
+        }
+
+        .block {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5px;
+            height: 100vh;
+
+            @media screen and (min-width: 1724px) {
+                height: 50vh;
+            }
+
+
+            .team_section {
+                display: flex;
+                flex-direction: column;
+
+                @media screen and (min-width: 1724px) {
+                    flex-direction: row;
+                }
+
+                .row1 {
+                    display: flex;
+                    flex-direction: row;
+
+                    @media screen and (min-width: 1724px) {
+                        flex-direction: row;
+                    }
+
+                    .biz_section {
+                        padding: 10px;
+
+                        .button {
+                            position: relative;
+                            border: none;
+                            background: none;
+                            padding: 0;
+                            cursor: pointer;
+                            transition: transform 0.3s ease;
+
+                            .img_style {
+                                border-radius: 10px;
+                                border: 4px solid white;
+                                transition: transform 0.3s ease;
+                            }
+
+                            .overlay_text {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                padding: 8px 12px;
+                                background: rgba(0, 0, 0, 0.6);
+                                color: white;
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                                text-align: center;
+                                border-radius: 0 0 10px 10px;
+                                font-family: "Benzin-Regular";
+
+                                @media screen and (max-width: 750px) {
+                                    font-size: 3vw;
+                                }
+                            }
+                        }
+
+                        .button:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    .mech_section {
+                        padding: 10px;
+
+                        .button {
+                            position: relative;
+                            border: none;
+                            background: none;
+                            padding: 0;
+                            cursor: pointer;
+                            transition: transform 0.3s ease;
+
+                            .img_style {
+                                border-radius: 10px;
+                                border: 4px solid white;
+                                transition: transform 0.3s ease;
+                            }
+
+                            .overlay_text {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                padding: 8px 12px;
+                                background: rgba(0, 0, 0, 0.6);
+                                color: white;
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                                text-align: center;
+                                border-radius: 0 0 10px 10px;
+                                font-family: "Benzin-Regular";
+
+                                @media screen and (max-width: 750px) {
+                                    font-size: 3vw;
+                                }
+                            }
+                        }
+
+                        .button:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+
+                .row2 {
+                    display: flex;
+                    flex-direction: row;
+
+                    .elec_section {
+                        padding: 10px;
+
+                        .button {
+                            position: relative;
+                            border: none;
+                            background: none;
+                            padding: 0;
+                            cursor: pointer;
+                            transition: transform 0.3s ease;
+
+                            .img_style {
+                                border-radius: 10px;
+                                border: 4px solid white;
+                                transition: transform 0.3s ease;
+                            }
+
+                            .overlay_text {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                padding: 8px 12px;
+                                background: rgba(0, 0, 0, 0.6);
+                                color: white;
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                                text-align: center;
+                                border-radius: 0 0 10px 10px;
+                                font-family: "Benzin-Regular";
+
+                                @media screen and (max-width: 750px) {
+                                    font-size: 3vw;
+                                }
+                            }
+                        }
+
+                        .button:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    .soft_section {
+                        padding: 10px;
+
+                        .button {
+                            position: relative;
+                            border: none;
+                            background: none;
+                            padding: 0;
+                            cursor: pointer;
+                            transition: transform 0.3s ease;
+
+                            .img_style {
+                                border-radius: 10px;
+                                border: 4px solid white;
+                                transition: transform 0.3s ease;
+                            }
+
+                            .overlay_text {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                padding: 8px 12px;
+                                background: rgba(0, 0, 0, 0.6);
+                                color: white;
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                                text-align: center;
+                                border-radius: 0 0 10px 10px;
+                                font-family: "Benzin-Regular";
+
+                                @media screen and (max-width: 750px) {
+                                    font-size: 3vw;
+                                }
+                            }
+                        }
+
+                        .button:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.65);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: fadeIn 0.3s ease forwards;
+                z-index: 100;
+                
+                .modal {
+                    background: #070707;
+                    color: white;
+                    border-radius: 12px;
+                    border: 2px solid rgb(29, 29, 29);
+                    padding: 30px;
+                    max-width: 90vw;
+                    width: 90vw;
+                    max-height: 80vh;
+                    position: relative;
+                    animation: popIn 0.3s ease forwards;
+
+                    @media screen and (min-width: 1724px) {
+                        width: 1725px;
+                    }
+
+                    &.modal h2 {
+                        font-family: "Benzin-Regular";
+                    }
+
+                    .closeBtn {
+                        position: absolute;
+                        top: 12px;
+                        right: 12px;
+                        background: transparent;
+                        border: none;
+                        font-size: 24px;
+                        cursor: pointer;
+                    }
+
+                    .member_list {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        gap: 12px;
+                        margin-top: 20px;
+                        max-height: 60vh;
+                        overflow-y: auto;
+
+                        .member_card {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 12px;
+                            padding: 10px;
+                            border-radius: 8px;
+                            background: #1d1d1d;
+
+                            .member_img {
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+
+                            .member_info {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Font Families*/
+@font-face {
+    font-family: "Benzin-Regular";
+    src: url("/font_styles/Benzin-Regular.ttf");
+}
+@font-face {
+    font-family: "Benzin-Bold";
+    src: url("/font_styles/Benzin-Bold.ttf");
+}
+@font-face {
+    font-family: "Coolvetica-Regular";
+    src: url("/font_styles/coolvetica\ rg.otf");
+}
+@font-face {
+    font-family: "Helvetica-Regular";
+    src: url("/font_styles/Helvetica.ttf");
+}

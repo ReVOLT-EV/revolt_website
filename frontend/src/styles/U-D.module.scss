@@ -1,0 +1,211 @@
+/*
+-------------------------------
+Laptop Dimensions: Min Width - 1024px
+Tablet/Mobilde Dimensions: Max Width - 1023px
+-------------------------------
+*/
+
+.ud_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1725px;
+    margin: 0 auto;
+
+    .top_div {
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        margin-top: 60px;
+
+        .left_top {
+            background-image: linear-gradient(to bottom right, black 50%, white 100%);
+            background-size: cover;
+            width: 5%;
+            height: 100%;
+            
+            @media screen and (max-width: 1275px) {
+                display: none;
+            }
+
+            &.left_top p {
+                opacity: 0;
+                font-size: 0;
+            }
+        }
+
+        .center_top {
+            background-image: linear-gradient(to bottom, black, white);
+            width: 90%;
+            height: 100%;
+
+            @media screen and (max-width: 1275px) {
+                width: 100%
+            }
+
+            &.center_top p {
+                opacity: 0;
+                font-size: 0;
+            }
+        }
+
+        .right_top {
+            background-image: linear-gradient(to bottom left, black 50%, white 100%);
+            width: 5%;
+            height: 100%;
+
+            @media screen and (max-width: 1275px) {
+                display: none;
+            }
+
+            &.right_top p {
+                opacity: 0;
+                font-size: 0;
+            }
+        }
+    }
+
+    .center_div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 50vh;
+        align-items: center;
+
+        .left_center {
+            opacity: 1;
+            background-image: linear-gradient(to right, black, white);
+            width: 5%;
+            height: 100%;
+
+            @media screen and (max-width: 1275px) {
+                display: none;
+            }
+
+            &.left_center p {
+                opacity: 0;
+                font-size: 0;
+            }
+        }
+
+        .center_center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            height: 100%;
+            background-color: white;
+
+            @media screen and (max-width: 1275px) {
+                width: 100%
+            }
+
+            .text_style {
+                font-family: "Benzin-Bold";
+                font-size: 40px;
+                color: black;
+                text-align: center;
+            }
+        }
+
+        .right_center {
+            opacity: 1;
+            background-image: linear-gradient(to left, black, white);
+            width: 5%;
+            height: 100%;
+
+            @media screen and (max-width: 1275px) {
+                display: none;
+            }
+
+            &.right_center p {
+                opacity: 0;
+                font-size: 0;
+            }
+        }
+    }
+
+    .bottom_div {
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        margin-bottom: 50px;
+
+        .left_bottom {
+            background-image: linear-gradient(to top right, black 50%, white 100%);
+            background-size: cover;
+            width: 5%;
+            height: 100%;
+
+            @media screen and (max-width: 1275px) {
+                display: none;
+            }
+
+            &.left_bottom p {
+                opacity: 0;
+                font-size: 0;
+            }
+
+        }
+
+        .center_bottom {
+            background-image: linear-gradient(to top, black, white);
+            width: 90%;
+            height: 100%;
+
+            @media screen and (max-width: 1275px) {
+                width: 100%
+            }
+
+            &.center_bottom p {
+                opacity: 0;
+                font-size: 0;
+            }
+        }
+
+        .right_bottom {
+            background-image: linear-gradient(to top left, black 50%, white 100%);
+            width: 5%;
+            height: 100%;
+            
+            @media screen and (max-width: 1275px) {
+                display: none;
+            }
+
+            &.right_bottom p {
+                opacity: 0;
+                font-size: 0;
+            }
+        }
+    }
+}
+
+
+
+
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+
+
+/* Font Families*/
+@font-face {
+    font-family: "Benzin-Regular";
+    src: url("/font_styles/Benzin-Regular.ttf");
+}
+@font-face {
+    font-family: "Benzin-Bold";
+    src: url("/font_styles/Benzin-Bold.ttf");
+}
+@font-face {
+    font-family: "Coolvetica-Regular";
+    src: url("/font_styles/coolvetica\ rg.otf");
+}
+@font-face {
+    font-family: "Helvetica-Regular";
+    src: url("/font_styles/Helvetica.ttf");
+}
