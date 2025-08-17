@@ -48,7 +48,7 @@ function Home_Main_Top() {
     );
 };
 
-function Home_Main_Content_Block_1 () {
+function Home_Main_Content_Block_1() {
     return (
         <PopInSection>
             <div className={home_style.hmcb1}>
@@ -88,7 +88,7 @@ function Home_Main_Content_Block_1 () {
     );
 };
 
-function Home_Main_Content_Block_2 () {
+function Home_Main_Content_Block_2() {
     return (
         <PopInSection>
             <div className={home_style.hmcb2}>
@@ -103,7 +103,7 @@ function Home_Main_Content_Block_2 () {
     );
 };
 
-function Home_Main_Content_Block_3 () {
+function Home_Main_Content_Block_3() {
     return (
         <PopInSection>
             <div className={home_style.hmcb3}>
@@ -154,7 +154,7 @@ function Home_Main_Content_Block_3 () {
     );
 };
 
-function Home_Main_Content_Block_4 () {
+function Home_Main_Content_Block_4() {
     return (
         <PopInSection>
             <div className={home_style.hmcb4}>

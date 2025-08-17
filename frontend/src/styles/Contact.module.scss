@@ -1,0 +1,211 @@
+/*
+-------------------------------
+Laptop Dimensions: Min Width - 1275px
+Tablet/Mobilde Dimensions: Max Width - 1274px
+-------------------------------
+*/
+
+.contact_main_top {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    width: 100%;
+    max-width: 1725px;
+    margin: 0 auto;
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 60vh;
+
+        .img_block {
+            display: flex;
+            position: absolute;
+            flex-direction: row;
+            width: 100%;
+            top: 70;
+            left: 0;
+
+            .img1 {
+                background-image: url("/contact_page_media/test_pic1.png");
+                background-size: cover;
+                width: 33%;
+                height: 60vh;
+            }
+
+            .img2 {
+                background-image: url("/contact_page_media/test_pic1.png");
+                background-size: cover;
+                width: 33%;
+                height: 60vh;
+            }
+
+            .img3 {
+                background-image: url("/contact_page_media/test_pic1.png");
+                background-size: cover;
+                width: 33%;
+                height: 60vh;
+            }
+        }
+
+        .title_block {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 2;
+
+            .text_area {
+                flex: 1;
+
+                .text_style {
+                    text-align: center;
+                    font-family: "Benzin-Bold";
+                    font-size: 50px;
+                    text-shadow: 
+                        0 0 5px black,
+                        0 0 10px black,
+                        0 0 20px black;
+                }
+            }
+        }
+    }
+}
+
+.cmb1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1725px;
+    margin: 0 auto;
+
+    .block {
+        display: flex;
+        flex-direction: column;
+
+        .text_section1 {
+            flex: 1;
+            padding-left: 20px;
+
+            .text_style {
+                font-family: "Benzin-Regular";
+                font-size: 20px;
+            }
+        }
+
+        .text_section2 {
+            flex: 1;
+            padding-left: 20px;
+            padding-top: 25px;
+
+            .text_style {
+                font-family: "Benzin-Regular";
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.cmb2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1725px;
+    margin: 0 auto;
+    
+    .message_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .form_section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 20px;
+            width: 80%;
+
+            .name_section {
+                width: 100%;
+                font-size: 20px;
+                background-color: rgb(210, 210, 210);
+                border-radius: 25px;
+                border: 5px solid rgb(234, 234, 234);
+                padding: 10px;
+                margin-top: 20px;
+                color: black;
+            }
+
+            .email_section {
+                width: 100%;
+                font-size: 20px;
+                background-color: rgb(210, 210, 210);
+                border-radius: 25px;
+                border: 5px solid rgb(234, 234, 234);
+                padding: 10px;
+                margin-top: 20px;
+                color: black;
+            }
+
+            .message_section {
+                width: 100%;
+                font-size: 20px;
+                background-color: rgb(210, 210, 210);
+                border-radius: 25px;
+                border: 5px solid rgb(234, 234, 234);
+                padding: 10px;
+                margin-top: 20px;
+                color: black;
+            }
+
+            .button_style {
+                border-radius: 25px;
+                width: 50%;
+                border: 5px solid rgb(158, 0, 0);
+                padding: 10px;
+                margin-top: 30px;
+                background-color: red;
+                color: white;
+                justify-content: center;
+                font-family: "Benzin-Regular";
+                font-size: 25px;
+            }
+
+            .button_style:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.empty_block {
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+@font-face {
+    font-family: "Benzin-Regular";
+    src: url("/font_styles/Benzin-Regular.ttf");
+}
+@font-face {
+    font-family: "Benzin-Bold";
+    src: url("/font_styles/Benzin-Bold.ttf");
+}
+@font-face {
+    font-family: "Coolvetica-Regular";
+    src: url("/font_styles/coolvetica%20rg.otf");
+}
+@font-face {
+    font-family: "Helvetica-Regular";
+    src: url("/font_styles/Helvetica.ttf");
+}
