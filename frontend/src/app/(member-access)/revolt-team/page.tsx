@@ -1,13 +1,4 @@
 
-import React from 'react';
-import revolt_style from '@/styles/ReVOLT_Team.module.scss';
+import ReVOLT_Home_Page from "./team-home/page";
 
-export default function ReVOLT_Home_Page() {
-
-  return (
-    <div className={revolt_style.revolt_container}>
-      <h1>Dashboard</h1>
-      <p>This is a protected page.</p>
-    </div>
-  );
-}
+export default ReVOLT_Home_Page;

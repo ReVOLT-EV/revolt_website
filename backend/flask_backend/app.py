@@ -1,6 +1,10 @@
 from flask import Flask, request, session, jsonify
 from flask_cors import CORS
 from datetime import timedelta
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app,
@@ -9,7 +13,7 @@ CORS(app,
      allow_headers=["Content-Type", "Authorization"],
      expose_headers=["Set-Cookie"])
 
-app.secret_key = 'supersecretkey'
+app.secret_key = 'Sup3rS3cr3tK3y'
 
 app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
@@ -18,7 +22,7 @@ app.config.update(
     PERMANENT_SESSION_LIFETIME=timedelta(hours=1)
 )
 
-users = {'admin': 'password123'}
+users = {os.getenv("USER"): os.getenv("PASS")}
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -40,5 +44,8 @@ def check():
         return jsonify({'loggedIn': True, 'user': user})
     return jsonify({'loggedIn': False})
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

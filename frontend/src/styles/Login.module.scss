@@ -1,0 +1,120 @@
+/*
+-------------------------------
+Laptop Dimensions: Min Width - 1275px
+Tablet/Mobilde Dimensions: Max Width - 1274px
+-------------------------------
+*/
+
+.login_main_section {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    width: 100%;
+    max-width: 1725px;
+    margin: 0 auto;
+
+    .block {
+        display: flex;
+        justify-content: center;
+        background-image: url("/2024-2025.png");
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        
+        .login_container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.75);
+            width: 100%;
+            align-items: center;
+
+            .login_title {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 80%;
+
+                &.login_title h1 {
+                    font-family: "Benzin-Bold";
+                    font-size: 70px;
+                    text-align: center;
+                }
+
+                &.login_title p {
+                    font-family: "Benzin-Regular";
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+
+            .login_cred_container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-top: 20px;
+
+                .login_user {
+                    margin-top: 20px;
+                    background-color: rgb(210, 210, 210);
+                    border-radius: 5px;
+                    border: 5px solid rgb(234, 234, 234);
+                    color: black;
+                    justify-content: center;
+                    font-size: 20px;
+                }
+
+                .login_pass {
+                    margin-top: 20px;
+                    background-color: rgb(210, 210, 210);
+                    border-radius: 5px;
+                    border: 5px solid rgb(234, 234, 234);
+                    color: black;
+                    justify-content: center;
+                    font-size: 20px;
+                }
+            }
+
+            .login_button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .button {
+                    border-radius: 25px;
+                    width: 50%;
+                    border: 5px solid rgb(158, 0, 0);
+                    padding: 10px;
+                    margin-top: 30px;
+                    background-color: red;
+                    color: white;
+                    justify-content: center;
+                    font-family: "Benzin-Regular";
+                    font-size: 25px;
+                }
+
+                .button:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Font Families*/
+@font-face {
+    font-family: "Benzin-Regular";
+    src: url("/font_styles/Benzin-Regular.ttf");
+}
+@font-face {
+    font-family: "Benzin-Bold";
+    src: url("/font_styles/Benzin-Bold.ttf");
+}
+@font-face {
+    font-family: "Coolvetica-Regular";
+    src: url("/font_styles/coolvetica\ rg.otf");
+}
+@font-face {
+    font-family: "Helvetica-Regular";
+    src: url("/font_styles/Helvetica.ttf");
+}

@@ -29,12 +29,12 @@ function Contact_Main_Block_1() {
             <div className={contact_style.block}>
                 <div className={contact_style.text_section1}>
                     <p className={contact_style.text_style}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur earum doloremque dolore nisi, sint sed, amet, harum architecto ipsam enim nihil mollitia unde quia expedita officia totam? Asperiores, explicabo.
+                         If you would like to reach out to us or have any questions about the club (applications, operations, etc), please fill out the form below and we will try to get back to you as soon as possible. If you wish to contact us on mobile devices, copy the email address located at the bottom of the page.
                     </p>
                 </div>
                 <div className={contact_style.text_section2}>
                     <p className={contact_style.text_style}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ipsam. Magnam iusto excepturi autem voluptas ipsum aut? Tenetur asperiores repudiandae enim excepturi delectus harum atque debitis vel adipisci, ab blanditiis!
+                        Note: The form is for serious inquires only. Spam and inappropriate language will not be tolerated and will be dealt with accordingly.
                     </p>
                 </div>
             </div>

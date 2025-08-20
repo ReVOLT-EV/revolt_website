@@ -1,0 +1,27 @@
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - email-backend
+      - flask-backend
+
+  email-backend:
+    build: ./backend/email_backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend/email_backend:/app
+      - /app/node_modules
+
+  flask-backend:
+    build: ./backend/flask_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/flask_backend:/app

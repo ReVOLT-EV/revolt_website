@@ -57,8 +57,8 @@ export const TeamLayout = () => {
                             onClick={() => setOpenSection("business")}
                         >
                             <Image
-                                width={350} height={350}
-                                src="/team_page_media/test_pic1.png" alt="Business Team"
+                                width={400} height={400}
+                                src="/team_page_media/biz_team/BIZ.JPG" alt="Business Team"
                                 className={team_style.img_style}
                             />
                             <span className={team_style.overlay_text}>Business Team</span>
@@ -70,8 +70,8 @@ export const TeamLayout = () => {
                             onClick={() => setOpenSection("mechanical")}
                         >
                             <Image
-                                width={350} height={350}
-                                src="/team_page_media/test_pic1.png" alt="Mechanical Team"
+                                width={400} height={400}
+                                src="/team_page_media/mech_team/MECH.JPG" alt="Mechanical Team"
                                 className={team_style.img_style}
                             />
                             <span className={team_style.overlay_text}>Mechanical Team</span>
@@ -85,8 +85,8 @@ export const TeamLayout = () => {
                             onClick={() => setOpenSection("electrical")}
                         >
                             <Image
-                                width={350} height={350}
-                                src="/team_page_media/test_pic1.png" alt="Electrical Team"
+                                width={400} height={400}
+                                src="/team_page_media/elec_team/ELEC.JPG" alt="Electrical Team"
                                 className={team_style.img_style}
                             />
                             <span className={team_style.overlay_text}>Electrical Team</span>
@@ -98,8 +98,8 @@ export const TeamLayout = () => {
                             onClick={() => setOpenSection("software")}
                         >
                             <Image
-                                width={350} height={350}
-                                src="/team_page_media/test_pic1.png" alt="Software Team"
+                                width={400} height={400}
+                                src="/team_page_media/soft_team/SOFT.JPG" alt="Software Team"
                                 className={team_style.img_style}
                             />
                             <span className={team_style.overlay_text}>Software Team</span>

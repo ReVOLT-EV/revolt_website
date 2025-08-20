@@ -192,7 +192,9 @@ export default function Home_Main() {
             <div className={home_style.empty_block} />
             <Home_Main_Content_Block_3 />     
             <div className={home_style.empty_block} />
-            <Home_Main_Content_Block_4 />     
+            <div>
+                <Home_Main_Content_Block_4 />  
+            </div>   
             <div className={home_style.empty_block} />        
         </>
     );
@@ -213,18 +215,18 @@ Content Data
 
 const slides = [
   {
-    title: 'INNOVATION',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus debitis, officiis dolor quibusdam ratione veniam perspiciatis earum est a cupiditate dolores reiciendis sequi molestiae maiores expedita aspernatur corrupti dolorem magnam.',
-    img: '/home_page_media/test_pic1.png',
-  },
-  {
     title: 'PERFORMANCE',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus debitis, officiis dolor quibusdam ratione veniam perspiciatis earum est a cupiditate dolores reiciendis sequi molestiae maiores expedita aspernatur corrupti dolorem magnam.',
+    body: 'Performance-focused upgrades ensure maximum efficiency and power in our EV conversions. Our designs emphasize lightweight, high-performance materials for optimal speed and endurance. We fine-tune every component to achieve superior performance on the track and road.',
     img: '/home_page_media/test_pic1.png',
   },
   {
     title: 'SUSTAINABILITY',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus debitis, officiis dolor quibusdam ratione veniam perspiciatis earum est a cupiditate dolores reiciendis sequi molestiae maiores expedita aspernatur corrupti dolorem magnam.',
+    body: 'Sustainability is key—our projects aim to reduce carbon footprints by repurposing existing vehicles. We emphasize recyclable materials and energy-efficient designs in every project. By converting gas vehicles to electric, we reduce emissions and contribute to a cleaner future.',
+    img: '/home_page_media/test_pic1.png',
+  },
+  {
+    title: 'INNOVATION',
+    body: 'At the forefront of ReVOLTs mission is restoration by breathing life into old vehicles. We prioritize innovation, aiming to implement untested ideas with every project we undertake. The club specializes in the transformation of gas vehicles into modern electric powertrains.',
     img: '/home_page_media/test_pic1.png',
   },
 ];
@@ -240,7 +242,7 @@ Content Text
 const WWA_Text_1 = () => {
     return (
         <div className={home_style.text}>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde necessitatibus ipsum quam quia, ipsam omnis, alias aspernatur doloremque, molestiae debitis sed. Accusantium corrupti accusamus recusandae officia distinctio iste voluptas sed.</p>
+            <p>We are ReVOLT, a club built together by a group of people who shared a passion in development and innovation of electric vehicles. Ever thought about how a standard gas-powered vehicles could be converted into an all electric vehicle, while being able to improve the performance of the vehicle? ReVOLTs goal is to successfuly convert gas-powered vehicles into elctric vehicles, blending restoration with cutting-edge modernization.</p>
             {/* <ul>
                 <li>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et aperiam perferendis maxime accusantium ipsum adipisci dolorem? Earum id ab veniam. Perspiciatis natus quae dolorum facere sunt ea ipsum ipsa.</p>
@@ -259,7 +261,7 @@ const WWA_Text_1 = () => {
 const WWA_Text_2 = () => {
     return (
         <div className={home_style.text}>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorem exercitationem numquam facilis quibusdam recusandae autem, omnis voluptas obcaecati dignissimos porro iste ea laboriosam, magnam delectus ullam. Sint, similique consequuntur.</p>
+            <p>The electric vehicles that ReVOLT creates will compete in races against other vehicles (which could range from gas-powered to electric), providing the club as a whole with results and feedback about what improvements can be made to the vehicles for future competitons. Most importantly, the club makes sure to emphasis that members should have fun with the process in the development of the various projects as that is when the person is able to perfrom and work at their best.</p>
         </div>
     );
 }
@@ -267,13 +269,13 @@ const WWA_Text_2 = () => {
 const WJU_Text = () => {
     return (
     <div className={home_style.text}>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde necessitatibus ipsum quam quia, ipsam omnis, alias aspernatur doloremque, molestiae debitis sed. Accusantium corrupti accusamus recusandae officia distinctio iste voluptas sed.</p>
+            <p>Interested in Software/Mechanical/Electrical Engineering, Bikes, or Electric Vehicles? ReVOLT is the perfect club to join as you will have the opportunity to: .</p>
             <ul>
                 <li>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et aperiam perferendis maxime accusantium ipsum adipisci dolorem? Earum id ab veniam. Perspiciatis natus quae dolorum facere sunt ea ipsum ipsa.</p>
+                    <p>Become involved in converting Gas-Powered Vehicles into High-Performance EVs, as well as learning and getting experience with how the different Teams work (independently and together). Not sure about joining or have questions about joining, reach out to use via the contact from on the bottom of the page (if not present, the email is avaliable to copy at the bottom of the page).</p>
                 </li>
                 <li>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem molestiae pariatur ad similique, consequatur ipsam facere illum nihil qui ipsa ut architecto repudiandae voluptates vero laboriosam iste modi hic magnam.</p>
+                    <p>Connect with others who share the same passion as you and interact with a variety of people. If you are just starting, this would be a great way to build connections within ReVOLT.</p>
                 </li>
             </ul>
         </div>

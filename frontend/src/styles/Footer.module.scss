@@ -126,13 +126,33 @@ Tablet/Mobilde Dimensions: Max Width - 1023px
             padding: 5%;
             font-size: 20px;
             background-color: rgb(255, 0, 0);
+            border: 5px solid rgb(158, 0, 0);
             color: white;
             cursor: pointer;
             transition: transform 0.3s ease;
+            font-family: "Benzin-Regular";
 
             &:hover {
-                transform: scale(1.15);
+                transform: scale(1.075);
             }
         }
     }
+}
+
+/* Font Families*/
+@font-face {
+    font-family: "Benzin-Regular";
+    src: url("/font_styles/Benzin-Regular.ttf");
+}
+@font-face {
+    font-family: "Benzin-Bold";
+    src: url("/font_styles/Benzin-Bold.ttf");
+}
+@font-face {
+    font-family: "Coolvetica-Regular";
+    src: url("/font_styles/coolvetica\ rg.otf");
+}
+@font-face {
+    font-family: "Helvetica-Regular";
+    src: url("/font_styles/Helvetica.ttf");
 }
