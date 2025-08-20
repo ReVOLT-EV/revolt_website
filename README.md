@@ -48,12 +48,18 @@ By this point, all of the terminals should be up and running and you should be a
 
 ### Via Docker
 
-If you have Docker Desktop installed and configured to be linked with you GitHub account, you have the option to run the whole program in a single terminal (albeit might take a little bit longer to boot up). You first want to make sure you are at the root directory of the project. Once there, you will want to run the command:
+If you have Docker Desktop installed and configured to be linked with you GitHub account, you have the option to run the whole program in a single terminal (albeit might take a little bit longer to boot up). You first want to make sure you are at the root directory of the project and have Docker Desktop running in the background. Once there, you will want to run the command:
 
 ```bash
 docker compose up --build
 #or
 docker compose up -d --build #Enables access to the terminal
+```
+
+When running in detached mode, you can also run the following command if you want to chec the logs for the folders being run (the folder types can be found by checking the docker-compose.yml file):
+
+```bash
+docker compose logs (folder-type)
 ```
 
 When you are done, run the command:
@@ -63,3 +69,9 @@ docker compose down --rmi all --volumes
 ```
 
 This ensure that the images are wiped after every run and are rebuilt whenever the program is run locally/in development mode. This process is setup so that all memebrs can easily execute the program locally. There are other docker commands that can be used to check for the status of the program, however this was mainly desgined for internal use.
+
+## -----------------
+
+## Updates
+
+(No new updates)
