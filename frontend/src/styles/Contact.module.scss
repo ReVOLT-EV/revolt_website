@@ -122,6 +122,7 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         width: 100%;
 
         .form_section {

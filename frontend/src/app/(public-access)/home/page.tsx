@@ -59,7 +59,7 @@ function Home_Main_Content_Block_1() {
                             <div className={home_style.c1i_1}>
                                 <Image
                                     width={500} height={500}
-                                    src="/home_page_media/test_pic1.png" alt="Test Pic"
+                                    src="/home_page_media/wwa1.jpg" alt="WWA Pic 1"
                                     className={home_style.img_style}
                                 />
                             </div>
@@ -76,7 +76,7 @@ function Home_Main_Content_Block_1() {
                             <div className={home_style.c2i_1}>
                             <Image
                                     width={500} height={500}
-                                    src="/home_page_media/test_pic1.png" alt="Test Pic"
+                                    src="/home_page_media/wwa2.jpg" alt="WWA Pic 2"
                                     className={home_style.img_style}
                                 /> 
                             </div>
@@ -192,7 +192,7 @@ export default function Home_Main() {
             <div className={home_style.empty_block} />
             <Home_Main_Content_Block_3 />     
             <div className={home_style.empty_block} />
-            <div>
+            <div style={{display: 'none'}}>
                 <Home_Main_Content_Block_4 />  
             </div>   
             <div className={home_style.empty_block} />        
@@ -241,8 +241,8 @@ Content Text
 
 const WWA_Text_1 = () => {
     return (
-        <div className={home_style.text}>
-            <p>We are ReVOLT, a club built together by a group of people who shared a passion in development and innovation of electric vehicles. Ever thought about how a standard gas-powered vehicles could be converted into an all electric vehicle, while being able to improve the performance of the vehicle? ReVOLTs goal is to successfuly convert gas-powered vehicles into elctric vehicles, blending restoration with cutting-edge modernization.</p>
+        <div className={home_style.text} style={{display:"flex", flexDirection: "row", alignItems: "center"}}>
+            <p>We are ReVOLT, a club built together by a group of people who share a passion in development and innovation of electric vehicles. Ever thought about how a standard gas-powered vehicles could be converted into an all electric vehicle, while being able to improve the performance of the vehicle? ReVOLTs goal is to successfuly convert gas-powered vehicles into elctric vehicles, blending restoration with cutting-edge modernization.</p>
             {/* <ul>
                 <li>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores et aperiam perferendis maxime accusantium ipsum adipisci dolorem? Earum id ab veniam. Perspiciatis natus quae dolorum facere sunt ea ipsum ipsa.</p>
@@ -260,7 +260,7 @@ const WWA_Text_1 = () => {
 
 const WWA_Text_2 = () => {
     return (
-        <div className={home_style.text}>
+        <div className={home_style.text} style={{display:"flex", flexDirection: "row", alignItems: "center"}}>
             <p>The electric vehicles that ReVOLT creates will compete in races against other vehicles (which could range from gas-powered to electric), providing the club as a whole with results and feedback about what improvements can be made to the vehicles for future competitons. Most importantly, the club makes sure to emphasis that members should have fun with the process in the development of the various projects as that is when the person is able to perfrom and work at their best.</p>
         </div>
     );
@@ -268,7 +268,7 @@ const WWA_Text_2 = () => {
 
 const WJU_Text = () => {
     return (
-    <div className={home_style.text}>
+    <div className={home_style.text} style={{display:"flex", flexDirection: "column", alignItems: "center"}}>
             <p>Interested in Software/Mechanical/Electrical Engineering, Bikes, or Electric Vehicles? ReVOLT is the perfect club to join as you will have the opportunity to: .</p>
             <ul>
                 <li>
@@ -284,7 +284,7 @@ const WJU_Text = () => {
 
 const PC_Text = () => {
     return (
-        <div className={home_style.text}>
+        <div className={home_style.text} style={{display:"flex", flexDirection: "row", alignItems: "center"}}>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorem exercitationem numquam facilis quibusdam recusandae autem, omnis voluptas obcaecati dignissimos porro iste ea laboriosam, magnam delectus ullam. Sint, similique consequuntur.</p>
         </div>
     );
