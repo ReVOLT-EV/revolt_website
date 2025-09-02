@@ -113,8 +113,8 @@ function Home_Main_Content_Block_3() {
                         <div className={home_style.text_section}>
                             <WJU_Text />
                         </div>
-                        <div className={home_style.img_section}>
-                            <div className={home_style.row1}>
+                        <div className={home_style.video_img_section}>
+                            {/* <div className={home_style.row1}>
                                 <div>
                                     <Image
                                         width={250} height={250}
@@ -145,7 +145,15 @@ function Home_Main_Content_Block_3() {
                                         className={home_style.img_style}
                                     />
                                 </div>
-                            </div>
+                            </div> */}
+                            <iframe
+                                width=""
+                                height=""
+                                src="https://www.youtube.com/embed/ksU0j4Y6paA"
+                                title="ReVOLT Video"
+                                className={home_style.video_style}
+                                allow=""
+                            />
                         </div>
                     </div>
                 </div>
@@ -217,17 +225,17 @@ const slides = [
   {
     title: 'PERFORMANCE',
     body: 'Performance-focused upgrades ensure maximum efficiency and power in our EV conversions. Our designs emphasize lightweight, high-performance materials for optimal speed and endurance. We fine-tune every component to achieve superior performance on the track and road.',
-    img: '/home_page_media/test_pic1.png',
+    img: '/home_page_media/wwfo1.png',
   },
   {
     title: 'SUSTAINABILITY',
     body: 'Sustainability is key—our projects aim to reduce carbon footprints by repurposing existing vehicles. We emphasize recyclable materials and energy-efficient designs in every project. By converting gas vehicles to electric, we reduce emissions and contribute to a cleaner future.',
-    img: '/home_page_media/test_pic1.png',
+    img: '/home_page_media/wwfo2.JPG',
   },
   {
     title: 'INNOVATION',
     body: 'At the forefront of ReVOLTs mission is restoration by breathing life into old vehicles. We prioritize innovation, aiming to implement untested ideas with every project we undertake. The club specializes in the transformation of gas vehicles into modern electric powertrains.',
-    img: '/home_page_media/test_pic1.png',
+    img: '/home_page_media/wwfo3.JPG',
   },
 ];
 

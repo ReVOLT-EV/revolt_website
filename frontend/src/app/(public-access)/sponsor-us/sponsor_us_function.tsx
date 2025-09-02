@@ -202,10 +202,8 @@ export const ReVOLT_SponsorInfoSlider: React.FC<SponsorTextSliderProps> = ({ sli
     ],
     silver: [
       { name: "Protocase", img: "/sponsor_us_page_media/silver/protocase.png" },
-    ],
-    bronze: [
-      { name: "OnShape", img: "/sponsor_us_page_media/bronze/onshape.png" },
-      { name: "Altium", img: "/sponsor_us_page_media/bronze/altium.png" },
+      { name: "OnShape", img: "/sponsor_us_page_media/silver/onshape.png" },
+      { name: "Altium", img: "/sponsor_us_page_media/silver/altium.png" },
     ]
   };
 

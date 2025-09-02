@@ -11,37 +11,34 @@ export const TeamLayout = () => {
 
     const teamMembers: Record<string, { name: string; role: string; img: string }[]> = {
         business: [
-            { name: "Tirta", role: "Marketing Lead", img: "/team_page_media/biz_team/Tirta.png" },
-            { name: "Kawthar", role: "Sponsorship Coordinator", img: "/team_page_media/biz_team/Kawthar.png" },
-            { name: "Moyo", role: "Sponsorship Coordinator", img: "/team_page_media/biz_team/Moyo.png" }
-            
+            { name: "Tirta", role: "Business Lead", img: "/team_page_media/biz_team/Tirta.png" },
+            { name: "Kawthar", role: "Business Member", img: "/team_page_media/biz_team/Kawthar.png" },
+            { name: "Moyo", role: "Business Member", img: "/team_page_media/biz_team/Moyo.png" }
         ],
         mechanical: [
-            { name: "Qasim", role: "Chassis Designer", img: "/team_page_media/mech_team/Qasim.png" },
-            { name: "EJ", role: "Manufacturing Lead", img: "/team_page_media/mech_team/EJ.png" },
-            { name: "Kassem", role: "Manufacturing Lead", img: "/team_page_media/mech_team/Kassem.png" },
-            { name: "Matei", role: "Manufacturing Lead", img: "/team_page_media/mech_team/Matei.png" },
-            { name: "Masroor", role: "Manufacturing Lead", img: "/team_page_media/mech_team/Masroor.png" },
-            { name: "Luis", role: "Manufacturing Lead", img: "/team_page_media/mech_team/Luis.png" },
-            { name: "Aldrich", role: "Manufacturing Lead", img: "/team_page_media/mech_team/Aldrich.png" }
+            { name: "Qasim", role: "Mechanical Lead", img: "/team_page_media/mech_team/Qasim.png" },
+            { name: "EJ", role: "Mechanical Member", img: "/team_page_media/mech_team/EJ.png" },
+            { name: "Kassem", role: "Mechanical Member", img: "/team_page_media/mech_team/Kassem.png" },
+            { name: "Matei", role: "Mechanical Member", img: "/team_page_media/mech_team/Matei.png" },
+            { name: "Masroor", role: "Mechanical Member", img: "/team_page_media/mech_team/Masroor.png" },
+            { name: "Luis", role: "Mechanical Member", img: "/team_page_media/mech_team/Luis.png" },
+            { name: "Aldrich", role: "Mechanical Member", img: "/team_page_media/mech_team/Aldrich.png" }
         ],
         electrical: [
-            { name: "Tanveer", role: "Wiring Specialist", img: "/team_page_media/elec_team/Tanveer.png" },
-            { name: "Rostom", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Rostom.png" },
-            { name: "Nadithi", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Nadithi.png" },
-            { name: "Tem", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Tem.png" },
-            { name: "Zarak", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Zarak.png" },
-            { name: "Spencer", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Spencer.png" },
-            { name: "Shaheer", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Shaheer.png" },
-            { name: "Ibrahim", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Ibrahim.png" },
-            { name: "Anthony", role: "Battery Systems Engineer", img: "/team_page_media/elec_team/Anthony.png" }
-        ],
-        software: [
-            { name: "Siem", role: "Lead Developer", img: "/team_page_media/soft_team/Siem.png" },
-            { name: "Usman", role: "UI/UX Designer", img: "/team_page_media/soft_team/Usman.png" },
-            { name: "Matthew", role: "Lead Developer", img: "/team_page_media/soft_team/Matthew.png" },
-            { name: "Mellisa", role: "UI/UX Designer", img: "/team_page_media/soft_team/Mellisa.png" },
-            { name: "Austin", role: "Lead Developer", img: "/team_page_media/soft_team/Austin.png" }
+            { name: "Nadithi", role: "Engineering Manager", img: "/team_page_media/elec_team/Nadithi.png" },
+            { name: "Tem", role: "Director", img: "/team_page_media/elec_team/Tem.png" },
+            { name: "Siem", role: "Director", img: "/team_page_media/soft_team/Siem.png" },
+            { name: "Ibrahim", role: "Electrical Lead", img: "/team_page_media/elec_team/Ibrahim.png" },
+            { name: "Tanveer", role: "Electrical Member", img: "/team_page_media/elec_team/Tanveer.png" },
+            { name: "Rostom", role: "Electrical Member", img: "/team_page_media/elec_team/Rostom.png" },
+            { name: "Zarak", role: "Electrical Member", img: "/team_page_media/elec_team/Zarak.png" },
+            { name: "Spencer", role: "Electrical Member", img: "/team_page_media/elec_team/Spencer.png" },
+            { name: "Shaheer", role: "Electrical Member", img: "/team_page_media/elec_team/Shaheer.png" },
+            { name: "Anthony", role: "Electrical Member", img: "/team_page_media/elec_team/Anthony.png" },
+            { name: "Usman", role: "Full-Stack Member", img: "/team_page_media/elec_team/Usman.png" },
+            { name: "Matthew", role: "Embedded Member", img: "/team_page_media/elec_team/Matthew.png" },
+            { name: "Mellisa", role: "Embedded Member", img: "/team_page_media/elec_team/Mellisa.png" },
+            { name: "Austin", role: "Embedded Member", img: "/team_page_media/elec_team/Austin.png" }
         ]
     };
 
@@ -77,8 +74,25 @@ export const TeamLayout = () => {
                             <span className={team_style.overlay_text}>Mechanical Team</span>
                         </button>
                     </div>
+                    <div className={team_style.elec_section}>
+                        <button 
+                            className={team_style.button}
+                            onClick={() => setOpenSection("electrical")}
+                        >
+                            <Image
+                                width={400} height={400}
+                                src="/team_page_media/elec_team/ELEC.JPG" alt="Electrical Team"
+                                className={team_style.img_style}
+                            />
+                            <span className={team_style.overlay_text}>Electrical Team</span>
+                        </button>
+                    </div>
                 </div>
-                <div className={team_style.row2}>
+
+
+
+
+                {/* <div className={team_style.row2}>
                     <div className={team_style.elec_section}>
                         <button 
                             className={team_style.button}
@@ -105,7 +119,11 @@ export const TeamLayout = () => {
                             <span className={team_style.overlay_text}>Software Team</span>
                         </button>
                     </div>
-                </div>
+                </div> */}
+
+
+
+
             </div>
 
 

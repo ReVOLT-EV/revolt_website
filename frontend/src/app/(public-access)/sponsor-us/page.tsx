@@ -29,7 +29,9 @@ const Sponsor_Main_Content_Block_1 = () => {
                         <div className={sponsor_style.text}>
                             <h2 className={sponsor_style.title}>Interested In Becoming A Sponsor</h2>
                             <p className={sponsor_style.text_style}>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque optio amet beatae assumenda iusto animi ab fuga omnis dolore corrupti, necessitatibus maiores quos earum. Voluptates rerum commodi id molestias magni.<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quos nisi debitis quaerat illum rerum quam mollitia laudantium, tempora voluptatem quibusdam, natus inventore nobis odio repudiandae impedit ut! Enim, mollitia!
+                                Partner with ReVOLT, the University of Calgary’s electric motorcycle design team, and help us push the boundaries of sustainable engineering. Sponsors gain exclusive perks, including brand exposure, recognition on our bike and opportunities to connect with a talented, innovative team. Join us in transforming traditional motorcycles into high-performance electric machines while showcasing your support for cutting-edge technology and sustainability.
+                                <br/><br/>
+                                Check out the current sponsors below and the sponsorship package to get more details.
                             </p>
                         </div>
                     </div>
@@ -84,23 +86,18 @@ Content Data
 
 const slides = [
   {
-    title: 'DIAMOND',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus debitis, officiis dolor quibusdam ratione veniam perspiciatis earum est a cupiditate dolores reiciendis sequi molestiae maiores expedita aspernatur corrupti dolorem magnam.',
+    title: 'DIAMOND 💎',
+    body: 'Enjoy all Gold benefits plus a large logo display, enterprise level Career Fair perks, and free access to all ReVOLT events. This tier offers maximum visibility and engagement for sponsors who want to make a major impact and support sustainable innovation in electric vehicle technology.',
     section: 'diamond',
   },
   {
-    title: 'GOLD',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus debitis, officiis dolor quibusdam ratione veniam perspiciatis earum est a cupiditate dolores reiciendis sequi molestiae maiores expedita aspernatur corrupti dolorem magnam.',
+    title: 'GOLD 🥇',
+    body: 'Receive all Silver benefits plus a medium sized logo showcase, enhanced Career Fair presence with corporate perks, and the opportunity to send representatives to a dedicated networking event. Ideal for companies seeking stronger engagement with our team and the university community.',
     section: 'gold',
   },
   {
-    title: 'SILVER',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus debitis, officiis dolor quibusdam ratione veniam perspiciatis earum est a cupiditate dolores reiciendis sequi molestiae maiores expedita aspernatur corrupti dolorem magnam.',
+    title: 'SILVER 🥈',
+    body: 'Support ReVOLT and gain visibility with a small logo on our bike, recognition during Clubs Week, and basic Career Fair perks. Perfect for those looking to contribute and gain initial exposure within the university community.',
     section: 'silver',
-  },
-  {
-    title: 'BRONZE',
-    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus debitis, officiis dolor quibusdam ratione veniam perspiciatis earum est a cupiditate dolores reiciendis sequi molestiae maiores expedita aspernatur corrupti dolorem magnam.',
-    section: 'bronze',
-  },
+  }
 ];
