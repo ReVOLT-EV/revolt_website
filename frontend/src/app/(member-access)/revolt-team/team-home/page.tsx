@@ -1,12 +1,25 @@
 
 import React from 'react';
+import Link from 'next/link';
+
 import revolt_style from '@/styles/ReVOLT_Team.module.scss';
 
 export default function ReVOLT_Home_Page() {
 
   return (
     <div className={revolt_style.revolt_container}>
-      <h1>This part of the site is not ready yet :(</h1>
+      <div className={revolt_style.block}>
+        <div className={revolt_style.page_1_link}>
+          <div>
+            <Link href=""></Link>
+          </div>
+        </div>
+        <div className={revolt_style.page_2_link}>
+          <div>
+            <Link href=""></Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
