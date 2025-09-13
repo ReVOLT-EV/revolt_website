@@ -27,7 +27,6 @@ export const TeamLayout = () => {
         electrical: [
             { name: "Nadithi", role: "Engineering Manager", img: "/team_page_media/elec_team/Nadithi.png" },
             { name: "Tem", role: "Director", img: "/team_page_media/elec_team/Tem.png" },
-            { name: "Siem", role: "Director", img: "/team_page_media/soft_team/Siem.png" },
             { name: "Ibrahim", role: "Electrical Lead", img: "/team_page_media/elec_team/Ibrahim.png" },
             { name: "Tanveer", role: "Electrical Member", img: "/team_page_media/elec_team/Tanveer.png" },
             { name: "Rostom", role: "Electrical Member", img: "/team_page_media/elec_team/Rostom.png" },
@@ -35,10 +34,13 @@ export const TeamLayout = () => {
             { name: "Spencer", role: "Electrical Member", img: "/team_page_media/elec_team/Spencer.png" },
             { name: "Shaheer", role: "Electrical Member", img: "/team_page_media/elec_team/Shaheer.png" },
             { name: "Anthony", role: "Electrical Member", img: "/team_page_media/elec_team/Anthony.png" },
-            { name: "Usman", role: "Full-Stack Member", img: "/team_page_media/elec_team/Usman.png" },
-            { name: "Matthew", role: "Embedded Member", img: "/team_page_media/elec_team/Matthew.png" },
-            { name: "Mellisa", role: "Embedded Member", img: "/team_page_media/elec_team/Mellisa.png" },
-            { name: "Austin", role: "Embedded Member", img: "/team_page_media/elec_team/Austin.png" }
+        ],
+        software: [
+            { name: "Siem", role: "Director", img: "/team_page_media/soft_team/Siem.png" },
+            { name: "Usman", role: "Full-Stack Member", img: "/team_page_media/soft_team/Usman.png" },
+            { name: "Matthew", role: "Embedded Member", img: "/team_page_media/soft_team/Matthew.png" },
+            { name: "Mellisa", role: "Embedded Member", img: "/team_page_media/soft_team/Mellisa.png" },
+            { name: "Austin", role: "Embedded Member", img: "/team_page_media/soft_team/Austin.png" }
         ]
     };
 
@@ -74,7 +76,7 @@ export const TeamLayout = () => {
                             <span className={team_style.overlay_text}>Mechanical Team</span>
                         </button>
                     </div>
-                    <div className={team_style.elec_section}>
+                    {/* <div className={team_style.elec_section}>
                         <button 
                             className={team_style.button}
                             onClick={() => setOpenSection("electrical")}
@@ -87,12 +89,25 @@ export const TeamLayout = () => {
                             <span className={team_style.overlay_text}>Electrical Team</span>
                         </button>
                     </div>
+                    <div className={team_style.elec_section}>
+                        <button 
+                            className={team_style.button}
+                            onClick={() => setOpenSection("software")}
+                        >
+                            <Image
+                                width={400} height={400}
+                                src="/team_page_media/soft_team/SOFT.JPG" alt="Software Team"
+                                className={team_style.img_style}
+                            />
+                            <span className={team_style.overlay_text}>Software Team</span>
+                        </button>
+                    </div> */}
                 </div>
 
 
 
 
-                {/* <div className={team_style.row2}>
+                <div className={team_style.row2}>
                     <div className={team_style.elec_section}>
                         <button 
                             className={team_style.button}
@@ -119,7 +134,7 @@ export const TeamLayout = () => {
                             <span className={team_style.overlay_text}>Software Team</span>
                         </button>
                     </div>
-                </div> */}
+                </div>
 
 
 
