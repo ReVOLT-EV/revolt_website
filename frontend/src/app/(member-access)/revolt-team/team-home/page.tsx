@@ -1,12 +1,28 @@
 
 import React from 'react';
+import Link from 'next/link';
+
 import revolt_style from '@/styles/ReVOLT_Team.module.scss';
 
 export default function ReVOLT_Home_Page() {
-
   return (
-    <div className={revolt_style.revolt_container} style={{display: "flex", height: "100vh", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
-      <h1>This part of the site is not ready yet :(</h1>
+    <div className={revolt_style.revolt_container}>
+      <div className={revolt_style.block}>
+        <div className={revolt_style.page_1_link}>
+          <div>
+            <Link href="/team-systems" >
+              ReVOLT Systems
+            </Link>
+          </div>
+        </div>
+        <div className={revolt_style.page_2_link}>
+          <div>
+            <Link href="/team-wiki">
+              ReVOLT Wiki
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
