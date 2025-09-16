@@ -57,7 +57,7 @@ export const PDF_Preview: React.FC = () => {
     return (
         <div className={pdf_style.pdf_preview}>
             <Image
-                width={1000} height={1000}
+                width={500} height={1000}
                 src="/sponsor_us_page_media/rs_frontpage.png" alt="PDF Front Cover"
                 className={pdf_style.img_style}
             />
