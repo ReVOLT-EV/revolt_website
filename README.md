@@ -86,7 +86,11 @@ The main branch is responsible for hosting the website. NO ONE will directly be 
 
 The development bracnh is where the team will work the most on, specificaly use this branch to test the changes made to the site before the chnages are pushed onto main. Futhermore, this will allow us to manage the content of the website so that partial changes can be made and once it is fully created, the whole component can be pushed onto main.
 
-The other 3 branches are designed so that members ae assigned to specific branches to work on their respetive tasks and in the end push the content onto the development branch, as this will help avoid merge conflicts that could occur (memebrs will be required to inform the admin about what files were worked on to ensure no accidental overlap occurs to minimize the issues encountered).
+The other 3 branches are designed so that members ae assigned to specific branches to work on their respetive tasks and in the end push the content onto the development branch, as this will help avoid merge conflicts that could occur (memebrs will be required to inform the admin about what files were worked on to ensure no accidental overlap occurs to minimize the issues encountered). Futhermore, the member will be required to use "Feature Branch" naming convention, where the "revolt" branches will be broken down into smaller components. The nameing will be done as:
+
+- (name)-(feature worked on)
+
+These branches can be developed by individual members where once the feauture is complete, the branch can be deleted.
 
 ### GitHub Commands
 
@@ -94,27 +98,54 @@ While using GitHub, it is best practice to use the git commnds as the built-in V
 
 ```bash
 # 1.
-git checkout (branch)
+git branch -a
 
 # 2.
-git pull origin main
+git checkout (branch)
 
 # 3.
+git pull origin main
+
+# 4.
 git pull
+
+# 5.
+git stash push -m "(message)"
+
+# 6.
+git stash list
+
+# 7.
+git stash pop
+
+# 8.
+git stash pop stash@(n)
 ```
 
-1. This command is useful when needing to switch bewteen different branches. When running the command, the branches are switched based on the local branches, however this will be mathced with the remote branches.
+1. This command is helpful when needing to check all of the branches that are available in the repository, which includes both local and remote branches. This is best run after the user pulls all of the content from the branch first to recieve all of the latest content.
 
-2. This command is useful when needing to update all of the content of the branch from the content present on main (getting all of the latest content being hosted on the site).
+2. This command is useful when needing to switch bewteen different branches. When running the command, the branches are switched based on the local branches, however this will be mathced with the remote branches.
 
-3. This command is used when retrieving the latest content from the current branch a user is on, ensuring that no conflicts occur when updating the files on the repo (should always be run when switching to the branch).
+3. This command is useful when needing to update all of the content of the branch from the content present on main (getting all of the latest content being hosted on the site).
+
+4. This command is used when retrieving the latest content from the current branch a user is on, ensuring that no conflicts occur when updating the files on the repo (should always be run when switching to the branch).
+
+5. This command is useful for when a user is making some chnages to code but under the wrong branch. Running the command will allow the user to stash the changes seperately, allowing them to switch to the proper branch.
+
+6. This command is used when a user needs to check what chnages are stashed should a user have made multiple stashes and is unaware of which changes need to be commited.
+
+7. This command is used along side with command #5, where the user is able to bring back the stashed changes once under the correct branch and commit the changes accordingly.
+
+8. This command is similar to command #7 where the user can commit a specifc stash from the chnages they have made, where the value of (n) is the index value of the stash list, which is run usinging command #6.
+
+## -----------------
 
 ```bash
 # 1.
-git add (file)
+git add (file or .)
 
 # 2.
-git commit -m (message)
+git commit -m "(message)"
 
 # 3.
 git push
@@ -128,7 +159,7 @@ git push
 
 NOTE: The admin will be responsible for merging the content from the development branch onto the main branch.
 
-## -----------------
+## ---------------
 
 ## Updates
 
