@@ -11,36 +11,36 @@ export const TeamLayout = () => {
 
     const teamMembers: Record<string, { name: string; role: string; img: string }[]> = {
         business: [
-            { name: "Tirta", role: "Business Lead", img: "/team_page_media/biz_team/Tirta.png" },
-            { name: "Kawthar", role: "Business Member", img: "/team_page_media/biz_team/Kawthar.png" },
-            { name: "Moyo", role: "Business Member", img: "/team_page_media/biz_team/Moyo.png" }
+            { name: "Tirta",        role: "Business Lead",          img: "/team_page_media/biz_team/Tirta.png" },
+            { name: "Kawthar",      role: "Business Member",        img: "/team_page_media/biz_team/Kawthar.png" },
+            { name: "Moyo",         role: "Business Member",        img: "/team_page_media/biz_team/Moyo.png" }
         ],
         mechanical: [
-            { name: "Qasim", role: "Mechanical Lead", img: "/team_page_media/mech_team/Qasim.png" },
-            { name: "EJ", role: "Mechanical Member", img: "/team_page_media/mech_team/EJ.png" },
-            { name: "Kassem", role: "Mechanical Member", img: "/team_page_media/mech_team/Kassem.png" },
-            { name: "Matei", role: "Mechanical Member", img: "/team_page_media/mech_team/Matei.png" },
-            { name: "Masroor", role: "Mechanical Member", img: "/team_page_media/mech_team/Masroor.png" },
-            { name: "Luis", role: "Mechanical Member", img: "/team_page_media/mech_team/Luis.png" },
-            { name: "Aldrich", role: "Mechanical Member", img: "/team_page_media/mech_team/Aldrich.png" }
+            { name: "Qasim",        role: "Mechanical Lead",        img: "/team_page_media/mech_team/Qasim.png" },
+            { name: "EJ",           role: "Mechanical Member",      img: "/team_page_media/mech_team/EJ.png" },
+            { name: "Kassem",       role: "Mechanical Member",      img: "/team_page_media/mech_team/Kassem.png" },
+            { name: "Matei",        role: "Mechanical Member",      img: "/team_page_media/mech_team/Matei.png" },
+            { name: "Masroor",      role: "Mechanical Member",      img: "/team_page_media/mech_team/Masroor.png" },
+            { name: "Luis",         role: "Mechanical Member",      img: "/team_page_media/mech_team/Luis.png" },
+            { name: "Aldrich",      role: "Mechanical Member",      img: "/team_page_media/mech_team/Aldrich.png" }
         ],
         electrical: [
-            { name: "Nadithi", role: "Engineering Manager", img: "/team_page_media/elec_team/Nadithi.png" },
-            { name: "Tem", role: "Director", img: "/team_page_media/elec_team/Tem.png" },
-            { name: "Ibrahim", role: "Electrical Lead", img: "/team_page_media/elec_team/Ibrahim.png" },
-            { name: "Tanveer", role: "Electrical Member", img: "/team_page_media/elec_team/Tanveer.png" },
-            { name: "Rostom", role: "Electrical Member", img: "/team_page_media/elec_team/Rostom.png" },
-            { name: "Zarak", role: "Electrical Member", img: "/team_page_media/elec_team/Zarak.png" },
-            { name: "Spencer", role: "Electrical Member", img: "/team_page_media/elec_team/Spencer.png" },
-            { name: "Shaheer", role: "Electrical Member", img: "/team_page_media/elec_team/Shaheer.png" },
-            { name: "Anthony", role: "Electrical Member", img: "/team_page_media/elec_team/Anthony.png" },
+            { name: "Tem",          role: "Director",               img: "/team_page_media/elec_team/Tem.png" },
+            { name: "Ibrahim",      role: "Electrical Lead",        img: "/team_page_media/elec_team/Ibrahim.png" },
+            { name: "Tanveer",      role: "Electrical Member",      img: "/team_page_media/elec_team/Tanveer.png" },
+            { name: "Rostom",       role: "Electrical Member",      img: "/team_page_media/elec_team/Rostom.png" },
+            { name: "Zarak",        role: "Electrical Member",      img: "/team_page_media/elec_team/Zarak.png" },
+            { name: "Spencer",      role: "Electrical Member",      img: "/team_page_media/elec_team/Spencer.png" },
+            { name: "Shaheer",      role: "Electrical Member",      img: "/team_page_media/elec_team/Shaheer.png" },
+            { name: "Anthony",      role: "Electrical Member",      img: "/team_page_media/elec_team/Anthony.png" },
+            { name: "Nadithi",      role: "Electrical Member",      img: "/team_page_media/elec_team/Nadithi.png" },
         ],
         software: [
-            { name: "Siem", role: "Director", img: "/team_page_media/soft_team/Siem.png" },
-            { name: "Usman", role: "Full-Stack Member", img: "/team_page_media/soft_team/Usman.png" },
-            { name: "Matthew", role: "Embedded Member", img: "/team_page_media/soft_team/Matthew.png" },
-            { name: "Mellisa", role: "Embedded Member", img: "/team_page_media/soft_team/Mellisa.png" },
-            { name: "Austin", role: "Embedded Member", img: "/team_page_media/soft_team/Austin.png" }
+            { name: "Siem",         role: "Director",               img: "/team_page_media/soft_team/Siem.png" },
+            { name: "Usman",        role: "Software Lead",          img: "/team_page_media/soft_team/Usman.png" },
+            { name: "Matthew",      role: "Software Member",        img: "/team_page_media/soft_team/Matthew.png" },
+            { name: "Mellisa",      role: "Software Member",        img: "/team_page_media/soft_team/Mellisa.png" },
+            { name: "Austin",       role: "Software Member",        img: "/team_page_media/soft_team/Austin.png" }
         ]
     };
 

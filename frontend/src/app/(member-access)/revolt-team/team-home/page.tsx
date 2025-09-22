@@ -1,27 +1,19 @@
 
 import React from 'react';
-import Link from 'next/link';
-
-import revolt_style from '@/styles/ReVOLT_Team.module.scss';
+import R_team_style from "@/styles/ReVOLT_Team.module.scss";
 
 export default function ReVOLT_Home_Page() {
   return (
-    <div className={revolt_style.revolt_container}>
-      <div className={revolt_style.block}>
-        <div className={revolt_style.page_1_link}>
-          <div>
-            <Link href="/team-systems" >
-              ReVOLT Systems
-            </Link>
-          </div>
-        </div>
-        <div className={revolt_style.page_2_link}>
-          <div>
-            <Link href="/team-wiki">
-              ReVOLT Wiki
-            </Link>
-          </div>
-        </div>
+    <div className={R_team_style.revolt_container}>
+      <div className={R_team_style.revolt_welcome}>
+        <p className={R_team_style.text_style}>
+          Weclome to ReVOLT Private Access
+        </p>
+      </div>
+      <div className={R_team_style.revolt_info}>
+        <p className={R_team_style.text_style}>
+          Use the Navigation Bar above to access the ReVOLT Member Content
+        </p>
       </div>
     </div>
   );
