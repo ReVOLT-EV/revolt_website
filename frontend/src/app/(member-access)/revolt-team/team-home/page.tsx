@@ -3,10 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import revolt_style from '@/styles/ReVOLT_Team.module.scss';
-import { useAuth } from '@/components/UserAuth';
 
 export default function ReVOLT_Home_Page() {
-  useAuth();
   return (
     <div className={revolt_style.revolt_container}>
       <div className={revolt_style.block}>
