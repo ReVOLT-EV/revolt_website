@@ -17,7 +17,7 @@ export const LoginControl = () => {
     const router = useRouter();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/check', { withCredentials: true }).then((res) => {
+        axios.get('https://revolt-website-logsys.onrender.com/check', { withCredentials: true }).then((res) => {
         if (res.data.loggedIn) {
             setLoggedIn(true);
             setUsername(res.data.user);
@@ -27,7 +27,7 @@ export const LoginControl = () => {
     }, []);
 
     const login = () => {
-        axios.post('http://localhost:5000/login', {
+        axios.post('https://revolt-website-logsys.onrender.com/login', {
             username: inputUser,
             password: inputPass
         }).then(() => {
