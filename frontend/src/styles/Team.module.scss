@@ -16,7 +16,7 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
         display: flex;
         justify-content: center;
         flex-direction: column;
-        // background-image: url('/team_page_media/test_pic1.png');
+        background-image: url('/team_page_media/team1.JPG');
         background-position: center;
         background-repeat: repeat;
         background-size: cover;
@@ -30,7 +30,8 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
 
         .gap_section {
             padding-top: 100px;
-            opacity: 0;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.90);
         }
 
         .title {
@@ -42,7 +43,7 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
                 0 0 5px black,
                 0 0 10px black,
                 0 0 20px black;
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.90);
 
             @media screen and (min-width: 1274px) {
                 padding-top: 75px;
@@ -50,12 +51,13 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
             }
         }
 
-        .block {
+        .block_section {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: rgba(0, 0, 0, 0.90);
 
             @media screen and (min-width: 1724px) {
                 height: 50vh;
@@ -360,9 +362,16 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
                             border-radius: 8px;
                             background: #1d1d1d;
 
-                            .member_img {
-                                border-radius: 50%;
-                                object-fit: cover;
+                            .img_container {
+                                width: 200px;
+                                height: 200px;
+
+                                .member_img {
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                    height: 100%;
+                                    width: 100%;
+                                }
                             }
 
                             .member_info {

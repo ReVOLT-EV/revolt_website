@@ -10,7 +10,7 @@ export default function Team_Main() {
         <>
             <div className={team_style.team}>
                 <div className={team_style.block}>
-                    <div className={team_style.gap_section}>EMPTY CONTENT</div>
+                    <div className={team_style.gap_section}></div>
                     <h2 className={team_style.title}>Meet The Team</h2>
                     <TeamLayout />
                 </div>
