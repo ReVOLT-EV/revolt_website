@@ -8,7 +8,7 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app,
-     origins=['https://www.revoltev.org/'],
+     origins=['https://www.revoltev.org'],
      supports_credentials=True,
      allow_headers=["Content-Type", "Authorization"],
      expose_headers=["Set-Cookie"])
