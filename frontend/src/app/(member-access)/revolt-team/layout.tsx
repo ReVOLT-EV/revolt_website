@@ -1,14 +1,18 @@
 // app/(member-access)/layout.tsx
 import { ReactNode } from 'react';
-import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export default async function MemberAccessLayout({ children }: { children: ReactNode }) {
-  const cookieStore = await cookies();
-  const session = cookieStore.get('session');
 
-  if (!session) {
-    redirect('/');
+  // Call backend API to check session
+  const res = await fetch("https://revolt-website-logsys.onrender.com/check", {
+    method: "GET",
+    credentials: "include", // cookies sent with request
+    cache: "no-store",      // prevent caching for SSR
+  });
+
+  if (!res.ok) {
+    redirect("/"); // Not logged in → redirect to landing page
   }
 
   return (
