@@ -15,10 +15,17 @@ CORS(app,
 
 app.secret_key = 'Sup3rS3cr3tK3y'
 
+# app.config.update(
+#     SESSION_COOKIE_HTTPONLY=True,
+#     SESSION_COOKIE_SAMESITE='Lax',  # Use 'None' + Secure=True for HTTPS
+#     SESSION_COOKIE_SECURE=False,    # True if using HTTPS
+#     PERMANENT_SESSION_LIFETIME=timedelta(hours=1)
+# )
+
 app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
-    SESSION_COOKIE_SAMESITE='Lax',  # Use 'None' + Secure=True for HTTPS
-    SESSION_COOKIE_SECURE=False,    # True if using HTTPS
+    SESSION_COOKIE_SAMESITE='None',  # Use 'None' + Secure=True for HTTPS
+    SESSION_COOKIE_SECURE=True,    # True if using HTTPS
     PERMANENT_SESSION_LIFETIME=timedelta(hours=1)
 )
 
