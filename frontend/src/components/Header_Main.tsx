@@ -59,7 +59,7 @@ const Header_Login = () => {
 
     useEffect(() => {
         axios.get('https://revolt-website-logsys.onrender.com/check', { withCredentials: true }).then(res => {
-            setLoggedIn(res.data.loggedIn);
+            setLoggedIn(res.data.logged_in);
         });
     }, [pathname]);
 
@@ -70,7 +70,7 @@ const Header_Login = () => {
             return axios.get('https://revolt-website-logsys.onrender.com/check', { withCredentials: true });
             })
             .then(res => {
-            if (!res.data.loggedIn) {
+            if (!res.data.logged_in) {
                 setLoggedIn(false);
                 router.push('/');
             }
