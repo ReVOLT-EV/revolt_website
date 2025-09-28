@@ -34,6 +34,8 @@ app.config.update(
 
 users = {os.getenv("USER"): os.getenv("PASS")}
 
+
+
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
@@ -61,10 +63,24 @@ def login():
         return resp
     return jsonify({"success": False}), 401
 
+
+
+
+
 @app.route('/logout', methods=['POST'])
 def logout():
-    session.pop('user', None)
-    return jsonify({'message': 'Logged out'})
+    resp = make_response({"success": True})
+    resp.set_cookie(
+        "session", "",
+        expires=0,           # expire immediately
+        httponly=True,
+        samesite="None",
+        secure=True
+    )
+    return resp
+
+
+
 
 @app.route('/check', methods=['GET'])
 def check():
@@ -80,6 +96,10 @@ def check():
         return jsonify({"logged_in": False, "error": "Token expired"}), 401
     except jwt.InvalidTokenError:
         return jsonify({"logged_in": False, "error": "Invalid token"}), 401
+
+
+
+
 
 # if __name__ == '__main__':
 #     app.run(debug=True)

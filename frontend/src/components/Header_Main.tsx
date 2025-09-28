@@ -58,14 +58,15 @@ const Header_Login = () => {
     const router = useRouter();
 
     useEffect(() => {
-        axios.get('https://revolt-website-logsys.onrender.com/check', { withCredentials: true }).then(res => {
-            setLoggedIn(res.data.logged_in);
-        });
-    }, [pathname]);
+        axios.get('https://revoltev.org/api/logsys/check', { withCredentials: true })
+            .then(res => setLoggedIn(res.data.logged_in))
+            .catch(() => setLoggedIn(false));
+        }, [pathname]);
 
     const logout = () => {
         axios.post('https://revolt-website-logsys.onrender.com/logout', {}, { withCredentials: true })
             .then(() => {
+                setLoggedIn(false);
             // Immediately re-check login status before updating state
             return axios.get('https://revolt-website-logsys.onrender.com/check', { withCredentials: true });
             })
