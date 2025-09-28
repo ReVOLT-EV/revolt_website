@@ -15,7 +15,6 @@ CORS(app,
      expose_headers=["Set-Cookie"])
 
 app.secret_key = os.getenv("SECRET_KEY", "Sup3rS3cr3tK3y")
-
 JWT_SECRET = os.getenv("JWT_SECRET", "AnotherSup3rS3cr3t")
 
 # app.config.update(
