@@ -1,8 +1,9 @@
-from flask import Flask, request, session, jsonify
+from flask import Flask, make_response, request, session, jsonify
 from flask_cors import CORS
-from datetime import timedelta
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import os
+import jwt
 
 load_dotenv()
 
@@ -13,7 +14,9 @@ CORS(app,
      allow_headers=["Content-Type", "Authorization"],
      expose_headers=["Set-Cookie"])
 
-app.secret_key = 'Sup3rS3cr3tK3y'
+app.secret_key = os.getenv("SECRET_KEY", "Sup3rS3cr3tK3y")
+
+JWT_SECRET = os.getenv("JWT_SECRET", "AnotherSup3rS3cr3t")
 
 # app.config.update(
 #     SESSION_COOKIE_HTTPONLY=True,
@@ -35,10 +38,29 @@ users = {os.getenv("USER"): os.getenv("PASS")}
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
-    if users.get(data['username']) == data['password']:
-        session['user'] = data['username']
-        return jsonify({'message': 'Logged in'}), 200
-    return jsonify({'message': 'Invalid'}), 401
+    username = data.get("username")
+    password = data.get("password")
+    
+    # Validate credentials (replace with your logic)
+    if username == os.getenv("USER") and password == os.getenv("PASS"):
+        # Create JWT token
+        token = jwt.encode(
+            {"username": username, "exp": datetime.utcnow() + timedelta(hours=2)},
+            JWT_SECRET,
+            algorithm="HS256"
+        )
+        
+        # Set cookie for frontend domain
+        resp = make_response({"success": True})
+        resp.set_cookie(
+            "session", token,
+            httponly=True,
+            samesite="None",  # allow cross-site
+            secure=True,      # only for https
+            max_age=2*60*60
+        )
+        return resp
+    return jsonify({"success": False}), 401
 
 @app.route('/logout', methods=['POST'])
 def logout():
