@@ -26,14 +26,18 @@ const JWT_SECRET = process.env.JWT_SECRET!;
 export function middleware(req: NextRequest) {
   const session = req.cookies.get("session")?.value;
 
-  // Protect /revolt-team routes
-  if (req.nextUrl.pathname.startsWith("/revolt-team")) {
+  // Protect both /revolt-team AND /(member-access) routes
+  const isProtectedRoute = 
+    req.nextUrl.pathname.startsWith("/revolt-team") ||
+    req.nextUrl.pathname.match(/^\/[^/]*\(member-access\)/);
+
+  if (isProtectedRoute) {
     if (!session) {
       return NextResponse.redirect(new URL("/", req.url));
     }
 
     try {
-      jwt.verify(session, JWT_SECRET); // throws if invalid/expired
+      jwt.verify(session, JWT_SECRET);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       return NextResponse.redirect(new URL("/", req.url));
@@ -44,7 +48,7 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/revolt-team/:path*"],
+  matcher: ["/revolt-team/:path*", "/(member-access)/:path*"],
 };
 
 
