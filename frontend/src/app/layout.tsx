@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Header from "@/components/Header_Main";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export const metadata: Metadata = {
   title: "ReVOLT",
@@ -19,9 +20,11 @@ export default function RootLayout({
       <body 
         suppressHydrationWarning={true}
       >
-        <Header/>
-        {children}
-        <Footer/>
+        <AuthProvider>
+          <Header/>
+          {children}
+          <Footer/>
+        </AuthProvider>
       </body>
     </html>
   );

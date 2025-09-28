@@ -9,7 +9,7 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app,
-     origins=['https://www.revoltev.org'],
+     origins=['https://www.revoltev.org', 'http://localhost:3000'],
      supports_credentials=True,
      allow_headers=["Content-Type", "Authorization"],
      expose_headers=["Set-Cookie"])
@@ -29,6 +29,7 @@ app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SAMESITE='None',  # Use 'None' + Secure=True for HTTPS
     SESSION_COOKIE_SECURE=True,    # True if using HTTPS
+    SESSION_COOKIE_DOMAIN='.revoltev.org',
     PERMANENT_SESSION_LIFETIME=timedelta(hours=1)
 )
 
@@ -61,11 +62,7 @@ def login():
             max_age=2*60*60
         )
         return resp
-    return jsonify({"success": False}), 401
-
-
-
-
+    return jsonify({"success": False, "error": "Invalid credentials"}), 401
 
 @app.route('/logout', methods=['POST'])
 def logout():
@@ -75,31 +72,29 @@ def logout():
         expires=0,           # expire immediately
         httponly=True,
         samesite="None",
-        secure=True
+        secure=True,
+        domain='.revoltev.org'
     )
     return resp
-
-
-
 
 @app.route('/check', methods=['GET'])
 def check():
     token = request.cookies.get("session")  # get JWT from cookie
     if not token:
-        return jsonify({"logged_in": False}), 401
+        return jsonify({"logged_in": False, "error": "No session token"}), 401
 
     try:
         payload = jwt.decode(token, JWT_SECRET, algorithms=["HS256"])
         # You can access payload["username"] here if needed
-        return jsonify({"logged_in": True, "user": payload["username"]})
+        return jsonify({"logged_in": True, "user": payload["username"], "exp": payload["exp"]})
     except jwt.ExpiredSignatureError:
         return jsonify({"logged_in": False, "error": "Token expired"}), 401
-    except jwt.InvalidTokenError:
-        return jsonify({"logged_in": False, "error": "Invalid token"}), 401
+    except jwt.InvalidTokenError as e:
+        return jsonify({"logged_in": False, "error": f"Invalid token {str(e)}"}), 401
 
-
-
-
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({"status": "healthy", "timestamp": datetime.utcnow().isoformat()})
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
