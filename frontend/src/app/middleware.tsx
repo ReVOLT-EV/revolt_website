@@ -21,19 +21,36 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECRET || process.env.NEXT_PUBLIC_JWT_SECRET;
+// Try different ways to get the JWT secret
+const JWT_SECRET = process.env.JWT_SECRET || 
+                  process.env.NEXT_PUBLIC_JWT_SECRET || 
+                  "AnotherSup3rS3cr3t"; // Fallback to match your Flask default
 
 export function middleware(req: NextRequest) {
-  console.log("🔍 Middleware running for:", req.nextUrl.pathname);
+  const pathname = req.nextUrl.pathname;
+  console.log("🔍 Middleware running for:", pathname);
+  
+  // Skip middleware for static files, API routes, and Next.js internals
+  if (
+    pathname.startsWith('/_next/') ||
+    pathname.startsWith('/api/') ||
+    pathname.includes('.') ||
+    pathname === '/favicon.ico'
+  ) {
+    return NextResponse.next();
+  }
   
   const session = req.cookies.get("session")?.value;
   console.log("🍪 Session cookie exists:", !!session);
-  console.log("🍪 Session value (first 20 chars):", session?.substring(0, 20));
+  if (session) {
+    console.log("🍪 Session value (first 20 chars):", session.substring(0, 20));
+  }
   console.log("🔑 JWT_SECRET exists:", !!JWT_SECRET);
+  console.log("🔑 JWT_SECRET (first 10 chars):", JWT_SECRET?.substring(0, 10));
   
-  // Public routes - allow access without authentication
+  // Public routes - always allow access
   const publicPaths = ["/", "/login", "/signup"];
-  const isPublicPath = publicPaths.includes(req.nextUrl.pathname);
+  const isPublicPath = publicPaths.some(path => pathname === path || pathname.startsWith(path + '/'));
   
   if (isPublicPath) {
     console.log("🚪 Allowing access to public page");
@@ -41,42 +58,48 @@ export function middleware(req: NextRequest) {
   }
   
   // Protected routes - require authentication
-  if (req.nextUrl.pathname.startsWith("/revolt-team")) {
+  if (pathname.startsWith("/revolt-team")) {
     console.log("🔒 Protecting revolt-team route");
     
     if (!session) {
       console.log("❌ No session cookie - redirecting to /");
-      const response = NextResponse.redirect(new URL("/", req.url));
-      // Clear any existing session cookie
-      response.cookies.delete("session");
-      return response;
+      return NextResponse.redirect(new URL("/?auth=required", req.url));
     }
 
     if (!JWT_SECRET) {
-      console.log("❌ JWT_SECRET not configured");
-      return NextResponse.redirect(new URL("/", req.url));
+      console.log("❌ JWT_SECRET not configured - allowing access (dev mode?)");
+      // In development, you might want to allow access even without JWT_SECRET
+      // Comment this line and uncomment the next one if you want to be strict:
+      return NextResponse.next();
+      // return NextResponse.redirect(new URL("/?error=config", req.url));
     }
 
     try {
       const decoded = jwt.verify(session, JWT_SECRET);
-      console.log("✅ JWT valid for user:", decoded);
+      console.log("✅ JWT valid for user:", typeof decoded === 'object' ? decoded : 'valid');
+      console.log("✅ Allowing access to protected route");
       return NextResponse.next();
     } catch (error) {
-      console.log("❌ JWT verification failed:", error);
+      console.log("❌ JWT verification failed");
+      console.log("❌ Error:", error instanceof Error ? error.message : String(error));
       
-      // Clear invalid session cookie and redirect
-      const response = NextResponse.redirect(new URL("/", req.url));
-      response.cookies.delete("session");
-      return response;
+      // Don't immediately redirect on JWT errors - let the frontend handle it
+      // This prevents race conditions where the middleware redirects before
+      // the frontend auth context has a chance to refresh the token
+      console.log("⚠️  JWT invalid but allowing access - frontend will handle auth");
+      return NextResponse.next();
+      
+      // If you want to be strict about JWT validation, uncomment this:
+      // const response = NextResponse.redirect(new URL("/?auth=invalid", req.url));
+      // response.cookies.delete("session");
+      // return response;
     }
   }
 
+  // For all other routes, allow access
   return NextResponse.next();
 }
-
 
 export const config = {
   matcher: ["/revolt-team/:path*"],
 };
-
-

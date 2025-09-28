@@ -30,7 +30,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://your-backend.onrender.com';
+  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://revolt-website-logsys.onrender.com';
 
   const checkAuth = async () => {
     try {

@@ -17,25 +17,16 @@ CORS(app,
 app.secret_key = os.getenv("SECRET_KEY", "Sup3rS3cr3tK3y")
 JWT_SECRET = os.getenv("JWT_SECRET", "AnotherSup3rS3cr3t")
 
-# app.config.update(
-#     SESSION_COOKIE_HTTPONLY=True,
-#     SESSION_COOKIE_SAMESITE='Lax',  # Use 'None' + Secure=True for HTTPS
-#     SESSION_COOKIE_SECURE=False,    # True if using HTTPS
-#     PERMANENT_SESSION_LIFETIME=timedelta(hours=1)
-# )
-
 app.config.update(
     SESSION_COOKIE_NAME="session",
     SESSION_COOKIE_HTTPONLY=True,
-    SESSION_COOKIE_SAMESITE='None',  # Use 'None' + Secure=True for HTTPS
-    SESSION_COOKIE_SECURE=True,    # True if using HTTPS
+    SESSION_COOKIE_SAMESITE='None',  # Use 'None' + Secure=True for HTTPS | Lax
+    SESSION_COOKIE_SECURE=True,    # True if using HTTPS | False
     SESSION_COOKIE_DOMAIN='.revoltev.org',
     PERMANENT_SESSION_LIFETIME=timedelta(hours=1)
 )
 
 users = {os.getenv("USER"): os.getenv("PASS")}
-
-
 
 @app.route('/login', methods=['POST'])
 def login():
