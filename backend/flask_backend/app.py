@@ -68,10 +68,18 @@ def logout():
 
 @app.route('/check', methods=['GET'])
 def check():
-    user = session.get('user')
-    if user:
-        return jsonify({'loggedIn': True, 'user': user})
-    return jsonify({'loggedIn': False})
+    token = request.cookies.get("session")  # get JWT from cookie
+    if not token:
+        return jsonify({"logged_in": False}), 401
+
+    try:
+        payload = jwt.decode(token, JWT_SECRET, algorithms=["HS256"])
+        # You can access payload["username"] here if needed
+        return jsonify({"logged_in": True, "user": payload["username"]})
+    except jwt.ExpiredSignatureError:
+        return jsonify({"logged_in": False, "error": "Token expired"}), 401
+    except jwt.InvalidTokenError:
+        return jsonify({"logged_in": False, "error": "Invalid token"}), 401
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
