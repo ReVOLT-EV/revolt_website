@@ -23,7 +23,7 @@ export const TeamLayout = () => {
             { name: "Kassem Jarrah",            role: "Battery Box Lead",        img: "/team_page_media/mech_team/Kassem Jarrah.JPG" },
             { name: "Aldrich James Varghese",   role: "Structrual Lead",         img: "/team_page_media/mech_team/Aldrich James Varghese.JPG" },
             { name: "Justin Abarquez",          role: "Mechanical Member",        img: "/team_page_media/mech_team/Justin Abarquez.JPG" },
-            { name: "Amir El-Kassamani",        role: "Mechanical Member",        img: "/team_page_media/mech_team/Amir El-Kassamani.JPG" },
+            { name: "Amir El-Kassamani",        role: "Mechanical Member",        img: "/team_page_media/mech_team/Amir El Kassamani.JPG" },
             { name: "Asim Salman",              role: "Mechanical Member",        img: "/team_page_media/mech_team/Asim Salman.JPG" },
             { name: "Kevin Panajoti",           role: "Mechanical Member",        img: "/team_page_media/mech_team/Kevin Panajoti.JPG" },
             { name: "Logan Kim",                role: "Mechanical Member",        img: "/team_page_media/mech_team/Logan Kim.JPG" },
