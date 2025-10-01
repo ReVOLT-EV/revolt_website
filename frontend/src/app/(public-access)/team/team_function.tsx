@@ -33,7 +33,7 @@ export const TeamLayout = () => {
             { name: "Noah Li",                  role: "Mechanical Member",        img: "/team_page_media/mech_team/Noah Li.JPG" },
         ],
         electrical: [
-            { name: "Ibrahim Khalid",           role: "Electrical Lead",        img: "/revolt_logo_invert.png" },
+            { name: "Ibrahim Khalid",           role: "Electrical Lead",        img: "/team_page_media/elec_team/Ibrahim.JPG" },
             { name: "Yu Xiang Sun",             role: "Electrical Lead",        img: "/team_page_media/elec_team/Yu Xiang Sun.JPG" },
             { name: "Savaarna Mitra",           role: "Electrical Member",        img: "/team_page_media/elec_team/Savaarna.JPG" },
             { name: "Damon Cameron",            role: "Electrical Member",        img: "/team_page_media/elec_team/Damon.JPG" },
