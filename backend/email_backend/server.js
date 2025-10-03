@@ -64,14 +64,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Set Brevo API key
-SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
+// ✅ Setup Brevo API key
+const clientInstance = SibApiV3Sdk.ApiClient.instance;
+clientInstance.authentications["api-key"].apiKey = process.env.BREVO_API_KEY;
 
 const brevoClient = new SibApiV3Sdk.TransactionalEmailsApi();
 
+// Route to send email
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
-
   if (!name || !email || !message) {
     return res.status(400).json({ success: false, message: "All fields required" });
   }
@@ -94,5 +95,6 @@ app.post("/send", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
+
 
