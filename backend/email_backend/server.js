@@ -64,8 +64,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Set Brevo API key
+SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
+
 const brevoClient = new SibApiV3Sdk.TransactionalEmailsApi();
-brevoClient.setApiKey(SibApiV3Sdk.TransactionalEmailsApiKeys.apiKey, process.env.BREVO_API_KEY);
 
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
@@ -93,3 +95,4 @@ app.post("/send", async (req, res) => {
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
