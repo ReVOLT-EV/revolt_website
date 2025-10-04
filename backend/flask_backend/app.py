@@ -57,16 +57,34 @@ def login():
 
 @app.route('/logout', methods=['POST'])
 def logout():
-    resp = make_response({"success": True})
-    resp.set_cookie(
-        "session", "",
-        expires=0,           # expire immediately
+    # resp = make_response({"success": True})
+    # resp.set_cookie(
+    #     "session", "",
+    #     expires=0,           # expire immediately
+    #     httponly=True,
+    #     samesite="None",
+    #     secure=True,
+    #     domain='.revoltev.org'
+    # )
+    # return resp
+    
+    # Clear Flask session
+    session.clear()
+
+    # Create response
+    response = make_response(jsonify({"success": True, "message": "Logged out"}))
+
+    # Overwrite/delete cookie
+    response.set_cookie(
+        "session",
+        "",
+        expires=0,
         httponly=True,
         samesite="None",
-        secure=True,
-        domain='.revoltev.org'
+        secure=True
     )
-    return resp
+
+    return response
 
 @app.route('/check', methods=['GET'])
 def check():
