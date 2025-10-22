@@ -1,0 +1,381 @@
+/*
+-------------------------------
+Laptop Dimensions: Min Width - 1275px
+Tablet/Mobilde Dimensions: Max Width - 1274px
+-------------------------------
+*/
+
+.sponsor_main_top {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 70px;
+
+    .title_block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 1725px;
+        background-image: url("/sponsor_us_page_media/test_pic1.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 75vh;
+
+        .text_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .text_style {
+                    font-family: "Benzin-Bold";
+                    font-size: 50px;
+                    text-align: center;
+                    color: white;
+                    text-shadow: 
+                        0 0 5px black,
+                        0 0 10px black,
+                        0 0 20px black;
+        }
+            }
+        }
+    }
+}
+
+.smcb1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .content_block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-width: 1725px;
+
+        @media screen and (max-width: 1274px) {
+            flex-direction: column;
+        }
+
+        .text_area {
+            display: flex;
+            justify-content: center;
+            width: 65%;
+
+            @media screen and (max-width: 1274px) {
+                width: 100%
+            }
+
+            .text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 80%;
+
+                .title {
+                    font-family: "Benzin-Bold";
+                    font-size: 40px;
+
+                    @media screen and (max-width: 1274px) {
+                        font-size: 25px;
+                        text-align: center;
+                    }
+                }
+
+                .text_style {
+                    padding-top: 40px;
+                    font-family: "Benzin-Regular";
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .pdf_area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 35%;
+
+            @media screen and (max-width: 1274px) {
+                padding-top: 40px;
+                width: 90%
+            }
+
+            .pdf_preview {
+                flex: 1;
+                width: auto;
+            }
+
+            .pdf_button {
+                display: flex;
+                margin-top: 20px;
+                padding: 10px;
+                border-radius: 25px;
+                border: 5px solid rgb(158, 0, 0);
+                background-color: red;
+                font-size: 20px;
+                font-family: "Benzin-Regular";
+                transition: transform 0.3s ease-in-out ;
+            }
+            .pdf_button:hover {
+                cursor: pointer;
+                transform: scale(1.075);
+            }
+        }
+    }
+}
+
+.smcb2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .slider_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    max-width: 1725px;
+
+    .content_section {
+      display: flex;
+      flex-direction: row;
+
+      .block {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+
+        .content_slider {
+          width: 1200px;
+          margin: 0 auto;
+
+          @media screen and (max-width: 1275px) {
+            width: 100vw;
+          }
+
+          .slide {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+
+            .slide_content {
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+              background-color: rgb(251, 251, 251);
+              color: red;
+              border-radius: 1rem;
+              padding: 2rem;
+
+              @media screen and (max-width: 1275px) {
+                flex-direction: column;
+              }
+
+              .text_section {
+                flex: 1;
+
+                h2 {
+                  font-family: "Benzin-Bold";
+                  margin-bottom: 1rem;
+                  font-size: 1.75rem;
+                  text-align: center;
+
+                  @media screen and (max-width: 1275px) {
+                    font-size: 30px;
+                  }
+                }
+
+                p {
+                  font-family: "Benzin-Regular";
+                  font-size: 1.125rem;
+                  line-height: 1.6;
+                }
+              }
+
+              .button_section {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+
+                .button {
+                  .button_style {
+                    border-radius: 25px;
+                    border: 5px solid rgb(187, 0, 0);
+                    background-color: red;
+                    color: white;
+                    font-family: "Benzin-Regular";
+                    font-size: 20px;
+                    padding: 10px;
+                  }
+
+                  .button_style:hover {
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+
+          .custom_dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+
+            .dot {
+              width: 12px;
+              height: 12px;
+              background-color: #ccc;
+              border: none;
+              border-radius: 50%;
+              margin: 0 6px;
+              cursor: pointer;
+
+              &.active {
+                background-color: #9f0000;
+              }
+            }
+          }
+        }
+
+        .overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.65);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: fadeIn 0.3s ease forwards;
+          z-index: 100;
+
+          .modal {
+            background: rgb(226, 226, 226);
+            color: black;
+            border-radius: 12px;
+            border: 2px solid rgb(29, 29, 29);
+            padding: 30px;
+            max-width: 90vw;
+            width: 90vw;
+            max-height: 80vh;
+            position: relative;
+            animation: popIn 0.3s ease forwards;
+
+            @media screen and (min-width: 1724px) {
+              width: 1725px;
+            }
+
+            h2 {
+              font-family: "Benzin-Regular";
+              font-size: 20px;
+            }
+
+            .closeBtn {
+              position: absolute;
+              top: 12px;
+              right: 12px;
+              background: transparent;
+              border: none;
+              font-size: 24px;
+              cursor: pointer;
+            }
+
+            .member_list {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center; /* Centers horizontally */
+              align-items: center; /* Centers vertically if shorter than container */
+              gap: 12px;
+              margin-top: 20px;
+              max-height: 60vh;
+              overflow-y: auto;
+              padding: 0 10px; /* Optional padding so edges aren’t flush */
+
+              .member_card {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center; /* Center content inside the card */
+                  justify-content: center;
+                  gap: 12px;
+                  padding: 10px;
+                  border-radius: 8px;
+                  background: #f0f0f0;
+                  max-width: 400px; /* Keeps them from stretching too wide */
+                  text-align: center; /* Center text inside */
+
+                  .member_img {
+                      border-radius: 15px;
+                      object-fit: cover;
+                  }
+
+                  .member_info {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.empty_block {
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+//-------------------------------
+//-------------------------------
+//-------------------------------
+
+@font-face {
+    font-family: "Benzin-Regular";
+    src: url("/font_styles/Benzin-Regular.ttf");
+}
+@font-face {
+    font-family: "Benzin-Bold";
+    src: url("/font_styles/Benzin-Bold.ttf");
+}
+@font-face {
+    font-family: "Coolvetica-Regular";
+    src: url("/font_styles/coolvetica%20rg.otf");
+}
+@font-face {
+    font-family: "Helvetica-Regular";
+    src: url("/font_styles/Helvetica.ttf");
+}
