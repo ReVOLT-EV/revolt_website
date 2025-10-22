@@ -77,20 +77,13 @@ This ensure that the images are wiped after every run and are rebuilt whenever t
 In this GitHub repo, you will find that there are a total of 5 branches present:
 
 - main
-- development
-- revolt-public-access
-- revolt-wiki
-- revolt-telemetry
+- staging
 
-The main branch is responsible for hosting the website. NO ONE will directly be working on the main branch (exceptions may apply). This is to nsure that no accidental pushes are made to main and that the website will host the content properl 24/7.
-
-The development bracnh is where the team will work the most on, specificaly use this branch to test the changes made to the site before the chnages are pushed onto main. Futhermore, this will allow us to manage the content of the website so that partial changes can be made and once it is fully created, the whole component can be pushed onto main.
-
-The other 3 branches are designed so that members ae assigned to specific branches to work on their respetive tasks and in the end push the content onto the development branch, as this will help avoid merge conflicts that could occur (memebrs will be required to inform the admin about what files were worked on to ensure no accidental overlap occurs to minimize the issues encountered). Futhermore, the member will be required to use "Feature Branch" naming convention, where the "revolt" branches will be broken down into smaller components. The nameing will be done as:
+The "main" branch will be responsible for hosting the offical site. This branch will only be worked on when a new update to the site is to be added after proper inspection from the team. The "staging" branch on the other hand is where the team will play around with there code and test the feature to see if they are able to work as intneded. While working with the "staging" branch, uers will be required to create their own branch to work on before merging their contnent onto the "staging" branch. The naming convention for the person branches is shown below.
 
 - (name)-(feature worked on)
 
-These branches can be developed by individual members where once the feauture is complete, the branch can be deleted.
+These branches can be developed by individual members where once the feauture is complete, the branch can be deleted after merging with the "staging" branch.
 
 ### GitHub Commands
 
