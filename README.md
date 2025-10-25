@@ -81,7 +81,7 @@ In this GitHub repo, you will find that there are a total of 5 branches present:
 
 The "main" branch will be responsible for hosting the offical site. This branch will only be worked on when a new update to the site is to be added after proper inspection from the team. The "staging" branch on the other hand is where the team will play around with there code and test the feature to see if they are able to work as intneded. While working with the "staging" branch, uers will be required to create their own branch to work on before merging their contnent onto the "staging" branch. The naming convention for the person branches is shown below.
 
-- (name)-(feature worked on)
+- (name)-(feature worked on) with "PubAcc" (Public Access) or "PrivAcc" (Private Access) at the end.
 
 These branches can be developed by individual members where once the feauture is complete, the branch can be deleted after merging with the "staging" branch.
 
