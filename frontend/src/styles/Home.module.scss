@@ -153,7 +153,7 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
     .block {
         display: flex;
         color: white;
-        background-color: rgb(0, 0, 0);
+        // background-color: rgb(0, 0, 0);
         flex-direction: column;
         padding-top: 50px;
         padding-left: 10px;
@@ -201,7 +201,8 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
 
                 .c1i_1 {
                     margin-left: 60px;
-                    margin-top: 10px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
 
                     @media screen and (max-width: 1275px) {
                         margin-left: 0;
@@ -218,7 +219,9 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
                 display: flex;
                 width: 50%;
                 justify-content: center;
-                padding-right: 5%;
+                margin-right: 7.5%;
+                background-color: rgb(0, 0, 0, 0.5);
+                border-radius: 25px;
 
                 @media screen and (max-width: 1275px) {
                     width: 100%;
@@ -264,7 +267,8 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
 
                 .c2i_1 {
                     margin-right: 20%;
-                    margin-top: 10px;                    
+                    margin-top: 5px;         
+                    margin-bottom: 5px;           
 
                     @media screen and (max-width: 1275px) {
                         margin-right: 0;
@@ -281,7 +285,10 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
                 display: flex;
                 width: 50%;
                 justify-content: center;
-                padding-left: 5%;
+                margin-left: 5%;
+                margin-right: 5%;
+                background-color: rgb(0, 0, 0, 0.5);
+                border-radius: 25px;
 
                 @media screen and (max-width: 1275px) {
                     width: 100%;
@@ -304,12 +311,12 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background-color: rgb(0, 0, 0);
+    // background-color: rgb(0, 0, 0);
 
     .block {
         display: flex;
         color: white;
-        background-color: rgb(0, 0, 0);
+        // background-color: rgb(0, 0, 0);
         flex-direction: column;
         padding-top: 50px;
         padding-left: 10px;
@@ -428,12 +435,12 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background-color: rgb(0, 0, 0);
+    // background-color: rgb(0, 0, 0);
 
     .block {
         display: flex;
         color: white;
-        background-color: rgb(0, 0, 0);
+        // background-color: rgb(0, 0, 0);
         flex-direction: column;
         padding-top: 50px;
         padding-left: 10px;
@@ -477,6 +484,9 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
                 justify-content: center;
                 margin-left: 100px;
                 width: 50%;
+                padding: 2.5%;
+                background-color: rgb(0, 0, 0, 0.5);
+                border-radius: 25px;
 
                 @media screen and (max-width: 1275px) {
                     width: 100%;
@@ -567,12 +577,12 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background-color: rgb(0, 0, 0);
+    // background-color: rgb(0, 0, 0);
 
     .block {
         display: flex;
         color: white;
-        background-color: rgb(0, 0, 0);
+        // background-color: rgb(0, 0, 0);
         flex-direction: column;
         padding-top: 50px;
         padding-left: 10px;
@@ -672,7 +682,13 @@ Tablet/Mobilde Dimensions: Max Width - 1274px
 
 .empty_block {
     display: flex;
-    height: 5px;
+    height: 10px;
+    width: 100%;
+}
+
+.empty_block_bottom {
+    display: flex;
+    height: 50px;
     width: 100%;
 }
 

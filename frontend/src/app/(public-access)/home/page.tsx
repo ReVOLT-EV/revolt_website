@@ -203,7 +203,7 @@ export default function Home_Main() {
             <div style={{display: 'none'}}>
                 <Home_Main_Content_Block_4 />  
             </div>   
-            <div className={home_style.empty_block} />        
+            <div className={home_style.empty_block_bottom} />        
         </>
     );
 };
