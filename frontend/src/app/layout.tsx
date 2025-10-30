@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
-import React, {  } from "react";
+import React, { useEffect, useRef } from "react";
 import "./globals.css";
 
 import Header from "@/components/Header_Main";
@@ -15,7 +14,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <title>ReVOLT</title>
       </head>
       <body suppressHydrationWarning={true} style={{ position: "relative" }}>
-        {/* <CanvasBackground /> */}
+        <CanvasBackground />
         <AuthProvider>
           <Header />
           {children}
@@ -30,183 +29,143 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 // ------------------------------------------
 // ------------------------------------------
 
-// class ParticleType {
-//   x: number;
-//   y: number;
-//   speed: { x: number; y: number };
-//   color: string;
-//   ang: number = 0;
-//   mag: number = 0;
+interface Particle {
+  x: number;
+  y: number;
+  speed: { x: number; y: number };
+  color: string;
+  ang: number;
+  mag: number;
+}
 
-//   constructor(x: number, y: number, speed: { x: number; y: number }, color: string) {
-//     this.x = x;
-//     this.y = y;
-//     this.speed = speed;
-//     this.color = color;
-//   }
+function CanvasBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<Particle[]>([]);
+  const animationFrameRef = useRef<number | null>(null);
+  const pulseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-//   upd(ctx: CanvasRenderingContext2D) {
-//     ctx.strokeStyle = this.color;
-//     ctx.lineWidth = 1;
-//     ctx.lineCap = "round";
-//     ctx.beginPath();
-//     ctx.moveTo(this.x, this.y);
-//     this.x += this.speed.x;
-//     this.y += this.speed.y;
-//     ctx.lineTo(this.x, this.y);
-//     ctx.stroke();
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-//     this.ang = Math.atan2(this.speed.y, this.speed.x);
-//     this.mag = Math.sqrt(this.speed.x ** 2 + this.speed.y ** 2);
-//     const op = [this.ang + Math.PI / 4, this.ang - Math.PI / 4];
-//     const ch = Math.floor(Math.random() * op.length);
-//     if (Math.random() < 0.05) {
-//       this.speed.x = Math.cos(op[ch]) * this.mag;
-//       this.speed.y = Math.sin(op[ch]) * this.mag;
-//     }
-//   }
-// }
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-// function CanvasBackground() {
-//   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-//   const particlesRef = useRef<Array<ParticleType>>([]);
-//   const rafRef = useRef<number | null>(null);
-//   const pulseIntervalRef = useRef<number | null>(null);
+    // Set canvas size
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
-//   useEffect(() => {
-//     const can = canvasRef.current;
-//     if (!can) return; // defensive check
+    const particles = particlesRef.current;
+    const speed = 5;
+    const period = 1000;
 
-//     const ctx = can.getContext("2d");
-//     if (!ctx) return;
+    function clear() {
+      if (!ctx || !canvas) return;
+      ctx.fillStyle = 'rgba(0,0,0,0.07)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
 
-//     function resize() {
+    function updateParticle(particle: Particle) {
+      if (!ctx) return;
+      
+      ctx.strokeStyle = particle.color;
+      ctx.lineWidth = 1;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(particle.x, particle.y);
+      
+      particle.x += particle.speed.x;
+      particle.y += particle.speed.y;
+      
+      ctx.lineTo(particle.x, particle.y);
+      ctx.stroke();
 
-//       // @ts-expect-error
-//       can.width = window.innerWidth;
+      particle.ang = Math.atan2(particle.speed.y, particle.speed.x);
+      particle.mag = Math.sqrt(particle.speed.x ** 2 + particle.speed.y ** 2);
+      
+      const options = [particle.ang + Math.PI / 4, particle.ang - Math.PI / 4];
+      const choice = Math.floor(Math.random() * options.length);
+      
+      if (Math.random() < 0.05) {
+        particle.speed.x = Math.cos(options[choice]) * particle.mag;
+        particle.speed.y = Math.sin(options[choice]) * particle.mag;
+      }
+    }
 
-//       // @ts-expect-error
-//       can.height = window.innerHeight;
-//     }
-//     // initial size and background
-//     resize();
-//     can.style.background = "black";
+    function pulse() {
+      if (!canvas) return;
+      
+      pulseTimeoutRef.current = setTimeout(pulse, period);
+      // const hue = Math.random() * (210 - 150) + 150;
+      
+      for (let i = 0; i < 56; i++) {
+        particles.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          speed: {
+            x: Math.cos((i / 8) * 2 * Math.PI) * speed,
+            y: Math.sin((i / 8) * 2 * Math.PI) * speed,
+          },
+          color: `hsl(0, 100%, ${Math.random() * (70 - 30) + 30}%)`,
+          ang: 0,
+          mag: 0,
+        });
+      }
+    }
 
-//     // particle helpers and logic
-//     function Clear() {
+    function gameMove() {
+      if (!canvas) return;
+      
+      animationFrameRef.current = requestAnimationFrame(gameMove);
+      clear();
+      
+      for (let i = particles.length - 1; i >= 0; i--) {
+        updateParticle(particles[i]);
+        
+        if (
+          particles[i].x < 0 ||
+          particles[i].x > canvas.width ||
+          particles[i].y < 0 ||
+          particles[i].y > canvas.height
+        ) {
+          particles.splice(i, 1);
+        }
+      }
+    }
 
-//       // @ts-expect-error
-//       ctx.fillStyle = "rgba(0,0,0,0.07)";
-//       // @ts-expect-error
-//       ctx.fillRect(0, 0, can.width, can.height);
-//     }
+    pulse();
+    gameMove();
 
-//     class Particle {
-//       x: number;
-//       y: number;
-//       speed: { x: number; y: number };
-//       color: string;
-//       ang: number = 0;
-//       mag: number = 0;
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      if (pulseTimeoutRef.current) {
+        clearTimeout(pulseTimeoutRef.current);
+      }
+      particles.length = 0;
+    };
+  }, []);
 
-//       constructor(x: number, y: number, speed: { x: number; y: number }, color: string) {
-//         this.x = x;
-//         this.y = y;
-//         this.speed = speed;
-//         this.color = color;
-//       }
-
-//       upd() {
-//         // @ts-expect-error
-//         ctx.strokeStyle = this.color;
-//         // @ts-expect-error
-//         ctx.lineWidth = 1;
-//         // @ts-expect-error
-//         ctx.lineCap = "round";
-//         // @ts-expect-error
-//         ctx.beginPath();
-//         // @ts-expect-error
-//         ctx.moveTo(this.x, this.y);
-//         this.x += this.speed.x;
-//         this.y += this.speed.y;
-//         // @ts-expect-error
-//         ctx.lineTo(this.x, this.y);
-//         // @ts-expect-error
-//         ctx.stroke();
-
-//         this.ang = Math.atan2(this.speed.y, this.speed.x);
-//         this.mag = Math.sqrt(this.speed.x ** 2 + this.speed.y ** 2);
-//         const op = [this.ang + Math.PI / 4, this.ang - Math.PI / 4];
-//         const ch = Math.floor(Math.random() * op.length);
-//         if (Math.random() < 0.05) {
-//           this.speed.x = Math.cos(op[ch]) * this.mag;
-//           this.speed.y = Math.sin(op[ch]) * this.mag;
-//         }
-//       }
-//     }
-
-//     function createPulse() {
-//   const speed = 5;
-//   for (let i = 0; i < 56; i++) {
-//     const angle = (i / 8) * 2 * Math.PI;
-
-//     // Generate a random lightness between 30% (dark red) and 70% (light red)
-//     const lightness = Math.random() * 40 + 30; 
-//     const color = `hsl(0, 100%, ${lightness}%)`; // hue 0 = red
-
-//     particlesRef.current.push(
-//       new Particle(
-//         // @ts-expect-error
-//         can.width / 2,
-//         // @ts-expect-error
-//         can.height / 2,
-//         { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed },
-//         color
-//       )
-//     );
-//   }
-// }
-
-//     // start the pulse interval
-//     const period = 1000; // ms
-//     pulseIntervalRef.current = window.setInterval(createPulse, period);
-//     // create an initial pulse so there's something immediately
-//     createPulse();
-
-//     // animation loop
-//     function gameMove() {
-//       rafRef.current = requestAnimationFrame(gameMove);
-//       Clear();
-//       const p = particlesRef.current;
-//       for (let i = p.length - 1; i >= 0; i--) {
-//         p[i].upd();
-//         // @ts-expect-error
-//         if (p[i].x < 0 || p[i].x > can.width || p[i].y < 0 || p[i].y > can.height) {
-//           p.splice(i, 1);
-//         }
-//       }
-//     }
-//     gameMove();
-
-//     // events
-//     window.addEventListener("resize", resize);
-
-//     // cleanup
-//     return () => {
-//       window.removeEventListener("resize", resize);
-//       if (rafRef.current) cancelAnimationFrame(rafRef.current);
-//       if (pulseIntervalRef.current) clearInterval(pulseIntervalRef.current);
-//       particlesRef.current = [];
-//     };
-//   }, []);
-
-//   // canvas sits fixed and covers the viewport, pointer-events none so it doesn't block clicks
-//   return (
-//     <canvas
-//       ref={canvasRef}
-//       id="canvas"
-//       style={{ position: "fixed", inset: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: -1 }}
-//     ></canvas>
-//   );
-// }
-
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: 'black',
+        zIndex: -1,
+        pointerEvents: 'none',
+      }}
+    />
+  );
+}
