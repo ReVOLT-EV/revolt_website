@@ -1,6 +1,85 @@
 /*
 -------------------------------
 Laptop Dimensions: Min Width - 1024px
-Tablet/Mobilde Dimensions: Max Width - 1023px
+Tablet/Mobile Dimensions: Max Width - 1023px
 -------------------------------
 */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(150deg, #180020, #360000);
+}
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.clock {
+  font-size: 7rem;
+  color: white;
+  font-weight: bold;
+  margin: 4rem 0;
+  font-family: sans-serif;
+}
+
+.teamButtons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.teamButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2rem;
+}
+
+/* Media Queries */
+@media (max-width: 1023px) {
+  .clock {
+    font-size: 6rem;
+  }
+
+  .teamButtons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .teamButton {
+    width: 100%;
+    text-align: center;
+  }
+}

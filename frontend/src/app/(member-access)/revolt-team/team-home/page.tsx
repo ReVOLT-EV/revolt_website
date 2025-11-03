@@ -11,14 +11,14 @@ export default function ReVOLT_Home_Page() {
         <div className={revolt_style.page_1_link}>
           <div>
             <Link href="/team-systems" >
-              ReVOLT Systems
+              {/* ReVOLT Systems */}
             </Link>
           </div>
         </div>
         <div className={revolt_style.page_2_link}>
           <div>
             <Link href="/team-wiki">
-              ReVOLT Wiki
+              {/* ReVOLT Wiki */}
             </Link>
           </div>
         </div>
