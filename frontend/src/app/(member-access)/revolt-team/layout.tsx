@@ -2,6 +2,7 @@ import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import styles from '@/styles/ReVOLT_Team.module.scss';
 import { userInfo } from 'os';
 
@@ -16,13 +17,6 @@ export default async function TeamLayout({ children }: { children: ReactNode }) 
         <ProtectedRoute>
           <div className={styles.container}>
             <header className={styles.header}>
-              <Image
-                src="/page_icons/ReVolt_Logo_White.png"
-                alt="ReVOLT Logo"
-                width={155}
-                height={55}
-                priority
-              />
             </header>
             
             <main className={styles.main}>

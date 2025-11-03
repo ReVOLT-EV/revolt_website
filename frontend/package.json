@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.4.0",
     "axios": "^1.10.0",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.507.0",
