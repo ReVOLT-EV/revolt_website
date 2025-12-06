@@ -2,6 +2,7 @@ import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Sidebar from '@/components/Member_Sidebar';
 
 import styles from '@/styles/ReVOLT_Team.module.scss';
 import { userInfo } from 'os';
@@ -9,7 +10,7 @@ import { userInfo } from 'os';
 export default async function TeamLayout({ children }: { children: ReactNode }) {
   // IMPORTANT: val must always be set to 1 for PRODUCTION. 
   // Otherwise set to 0 when in DEVELOPMENT mode
-  const val = 1;
+  const val = 0;
 
   return (
     <>
@@ -19,20 +20,17 @@ export default async function TeamLayout({ children }: { children: ReactNode }) 
             <header className={styles.header}>
             </header>
             
-            <main className={styles.main}>
-              <div className={styles.clock}>Hello User</div>
+            <div className={styles.layoutWrapper}>
+              <Sidebar />
               
-              <div className={styles.teamButtons}>
-                <Link href="/revolt-team/software" className={styles.teamButton}>SOFTWARE</Link>
-                <Link href="/revolt-team/electrical" className={styles.teamButton}>ELECTRICAL</Link>
-                <Link href="/revolt-team/mechanical" className={styles.teamButton}>MECHANICAL</Link>
-                <Link href="/revolt-team/business" className={styles.teamButton}>BUSINESS</Link>
-              </div>
-              
-              <div className={styles.content}>
-                {children}
-              </div>
-            </main>
+              <main className={styles.main}>
+                <div className={styles.clock}>Hello User</div>
+                
+                <div className={styles.content}>
+                  {children}
+                </div>
+              </main>
+            </div>
           </div>
         </ProtectedRoute>
       ) : (
@@ -47,20 +45,17 @@ export default async function TeamLayout({ children }: { children: ReactNode }) 
             />
           </header>
           
-          <main className={styles.main}>
-            <div className={styles.clock}>Hello User</div>
+          <div className={styles.layoutWrapper}>
+            <Sidebar />
             
-            <div className={styles.teamButtons}>
-              <Link href="/revolt-team/software" className={styles.teamButton}>SOFTWARE</Link>
-              <Link href="/revolt-team/electrical" className={styles.teamButton}>ELECTRICAL</Link>
-              <Link href="/revolt-team/mechanical" className={styles.teamButton}>MECHANICAL</Link>
-              <Link href="/revolt-team/business" className={styles.teamButton}>BUSINESS</Link>
-            </div>
-            
-            <div className={styles.content}>
-              {children}
-            </div>
-          </main>
+            <main className={styles.main}>
+              <div className={styles.clock}>Hello User</div>
+          
+              <div className={styles.content}>
+                {children}
+              </div>
+            </main>
+          </div>
         </div>
       )}
     </>
