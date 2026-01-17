@@ -11,31 +11,29 @@ export const TeamLayout = () => {
 
     const teamMembers: Record<string, { name: string; role: string; img: string }[]> = {
         business: [
-            { name: "Tirta Kusjanto",           role: "Business Lead",          img: "/team_page_media/biz_team/Tirta Kusjanto.JPG" },
-            { name: "Akila Fernando",           role: "Business Member",        img: "/team_page_media/biz_team/Akila.JPG" },
-            { name: "Janelle Angela Ruiz",      role: "Business Member",        img: "/team_page_media/biz_team/Janelle.JPG" },
-            { name: "Manal Fatima",             role: "Business Member",        img: "/team_page_media/biz_team/Manal.JPG" },
-            { name: "Roy Yang",                 role: "Business Member",        img: "/team_page_media/biz_team/Roy.JPG" },
+            { name: "Tirta Kusjanto",           role: "Director",                       img: "/team_page_media/biz_team/Tirta Kusjanto.JPG" },
+            { name: "Akila Fernando",           role: "Business/Software Member",       img: "/team_page_media/biz_team/Akila.JPG" },
+            { name: "Janelle Angela Ruiz",      role: "Business Member",                img: "/team_page_media/biz_team/Janelle.JPG" },
+            { name: "Manal Fatima",             role: "Business Member",                img: "/team_page_media/biz_team/Manal.JPG" },
+            { name: "Roy Yang",                 role: "Finance Lead",                   img: "/team_page_media/biz_team/Roy.JPG" },
         ],
         mechanical: [
-            { name: "Qasim Chaudhary",          role: "Mechanical Lead",        img: "/revolt_logo_invert.png" },
+            { name: "Qasim Chaudhary",          role: "Mechanical Lead",        img: "/team_page_media/mech_team/Qasim Chaudhary.JPG" },
             { name: "Nimuthu Thanthriwatte",    role: "Mechanical Lead",        img: "/team_page_media/mech_team/Nimuthu Hemachandra.JPG" },
             { name: "Kassem Jarrah",            role: "Battery Box Lead",        img: "/team_page_media/mech_team/Kassem Jarrah.JPG" },
-            { name: "Aldrich James Varghese",   role: "Structrual Lead",         img: "/team_page_media/mech_team/Aldrich James Varghese.JPG" },
+            { name: "Aldrich James Varghese",   role: "Structural Lead",         img: "/team_page_media/mech_team/Aldrich James Varghese.JPG" },
             { name: "Justin Abarquez",          role: "Mechanical Member",        img: "/team_page_media/mech_team/Justin Abarquez.JPG" },
             { name: "Amir El-Kassamani",        role: "Mechanical Member",        img: "/team_page_media/mech_team/Amir El Kassamani.JPG" },
             { name: "Asim Salman",              role: "Mechanical Member",        img: "/team_page_media/mech_team/Asim Salman.JPG" },
             { name: "Kevin Panajoti",           role: "Mechanical Member",        img: "/team_page_media/mech_team/Kevin Panajoti.JPG" },
             { name: "Logan Kim",                role: "Mechanical Member",        img: "/team_page_media/mech_team/Logan Kim.JPG" },
-            { name: "Alex Lee",                 role: "Mechanical Member",        img: "/revolt_logo_invert.png" },
+            { name: "Alex Lee",                 role: "Mechanical Member",        img: "/team_page_media/mech_team/Alex Lee.JPG" },
             { name: "Mihira Patel",             role: "Mechanical Member",        img: "/team_page_media/mech_team/Mihira Patel.JPG" },
             { name: "Emma Mantilla",            role: "Mechanical Member",        img: "/team_page_media/mech_team/Emma Mantilla.JPG" },
             { name: "Noah Li",                  role: "Mechanical Member",        img: "/team_page_media/mech_team/Noah Li.JPG" },
         ],
         electrical: [
-            { name: "Ibrahim Khalid",           role: "Electrical Lead",        img: "/team_page_media/elec_team/Ibrahim.JPG" },
-            { name: "Yu Xiang Sun",             role: "Electrical Lead",        img: "/team_page_media/elec_team/Yu Xiang Sun.JPG" },
-            { name: "Savaarna Mitra",           role: "Electrical Member",        img: "/team_page_media/elec_team/Savaarna.JPG" },
+            { name: "Marc Durieu",              role: "Electrical Lead",        img: "/team_page_media/elec_team/Marc.JPG" },
             { name: "Damon Cameron",            role: "Electrical Member",        img: "/team_page_media/elec_team/Damon.JPG" },
             { name: "Nate Immerkar",            role: "Electrical Member",        img: "/team_page_media/elec_team/Nate.JPG" },
             { name: "Fredella Pang",            role: "Electrical Member",        img: "/team_page_media/elec_team/Fredella.JPG" },
@@ -46,13 +44,14 @@ export const TeamLayout = () => {
             { name: "Andy Wang",                role: "Electrical Member",        img: "/team_page_media/elec_team/Andy Want.JPG" },
         ],
         software: [
-            { name: "Siem Debesay",             role: "Director",               img: "/team_page_media/soft_team/Siem Debesay.JPG" },
+            //{ name: "Siem Debesay",             role: "Director",               img: "/team_page_media/soft_team/Siem Debesay.JPG" },
             { name: "Usman Mahmood",            role: "Software Lead",          img: "/team_page_media/soft_team/Usman Mahmood.JPG" },
             { name: "Kawthar Aroua",            role: "Software Member",        img: "/team_page_media/soft_team/Kawthar.JPG" },
             { name: "Liam Mercier",             role: "Software Member",        img: "/team_page_media/soft_team/Liam.JPG" },
             { name: "Hania Aamir",              role: "Software Member",        img: "/team_page_media/soft_team/Hania.JPG" },
             { name: "Jacob Terlesky",           role: "Software Member",        img: "/team_page_media/soft_team/Jacob.JPG" },
             { name: "Farhad Alizada",           role: "Software Member",        img: "/team_page_media/soft_team/Farhad.JPG" },
+            { name: "Henis Patel",              role: "Software Member",        img: "/team_page_media/soft_team/Henis Patel.JPG" },
         ] 
     };
 
