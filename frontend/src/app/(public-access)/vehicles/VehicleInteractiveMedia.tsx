@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import vehicle_style from "@/styles/Vehicle.module.scss";
+import { BikeModelScene } from "./BikeModelScene";
 
 type VehicleMedia = {
     type: "image" | "video";
@@ -11,18 +12,15 @@ type VehicleMedia = {
     alt: string;
 };
 
-type VehicleInteractiveMediaProps = {
-    media?: VehicleMedia;
-    name: string;
+type VehicleModel = {
+    type: "glb" | "gltf" | "obj" | "stl";
+    src: string;
 };
 
-const BikeScenePlaceholder = ({ name }: { name: string }) => {
-    return (
-        <div className={vehicle_style.scene_placeholder} aria-label={`${name} 3D scene placeholder`}>
-            <span>In Development</span>
-            <p>Interactive model coming soon</p>
-        </div>
-    );
+type VehicleInteractiveMediaProps = {
+    media?: VehicleMedia;
+    model?: VehicleModel;
+    name: string;
 };
 
 const VehicleMediaContent = ({ media, name }: VehicleInteractiveMediaProps) => {
@@ -60,7 +58,7 @@ const VehicleMediaContent = ({ media, name }: VehicleInteractiveMediaProps) => {
     );
 };
 
-export const VehicleInteractiveMedia = ({ media, name }: VehicleInteractiveMediaProps) => {
+export const VehicleInteractiveMedia = ({ media, model, name }: VehicleInteractiveMediaProps) => {
     const [activeView, setActiveView] = useState<"video" | "model">("video");
 
     return (
@@ -87,7 +85,7 @@ export const VehicleInteractiveMedia = ({ media, name }: VehicleInteractiveMedia
             {activeView === "video" ? (
                 <VehicleMediaContent media={media} name={name} />
             ) : (
-                <BikeScenePlaceholder name={name} />
+                <BikeModelScene model={model} name={name} />
             )}
         </div>
     );

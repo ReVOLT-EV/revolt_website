@@ -9,6 +9,11 @@ export type VehicleMedia = {
     alt: string;
 };
 
+export type VehicleModel = {
+    type: "glb" | "gltf" | "obj" | "stl";
+    src: string;
+};
+
 export type VehicleTile = {
     label: string;
     value: string;
@@ -20,6 +25,7 @@ export type Vehicle = {
     tagline: string;
     summary: string;
     media?: VehicleMedia;
+    model?: VehicleModel;
     identity: VehicleTile[];
     specs: VehicleTile[];
     history: string[];
@@ -39,6 +45,10 @@ export const vehicles: Vehicle[] = [
             type: "video",
             src: "/vehicle_page_media/vehicle_page_video.mp4",
             alt: "ReVOLT electric racing bike development footage",
+        },
+        model: {
+            type: "glb",
+            src: "/vehicle_page_media/models/revolt-bike/revolt-bike.glb",
         },
         identity: [
             { label: "Vehicle", value: "Electric racing bike" },
@@ -72,7 +82,7 @@ export const VehicleCard = ({ vehicle, index }: VehicleCardProps) => {
     return (
         <article className={`${vehicle_style.vehicle_card} ${isEven ? vehicle_style.vehicle_card_even : vehicle_style.vehicle_card_odd}`}>
             <div className={vehicle_style.media_section}>
-                <VehicleInteractiveMedia media={vehicle.media} name={vehicle.name} />
+                <VehicleInteractiveMedia media={vehicle.media} model={vehicle.model} name={vehicle.name} />
             </div>
 
             <div className={vehicle_style.content_section}>

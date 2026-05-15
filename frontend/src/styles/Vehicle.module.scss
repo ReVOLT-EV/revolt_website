@@ -172,6 +172,7 @@ Tablet/Mobile Dimensions: Max Width - 1274px
 
 .vehicle_media,
 .media_placeholder,
+.scene_canvas,
 .scene_placeholder {
     display: block;
     width: 100%;
@@ -242,6 +243,14 @@ Tablet/Mobile Dimensions: Max Width - 1274px
         font-family: "Benzin-Bold";
         font-size: 80px;
         color: white;
+    }
+}
+
+.scene_canvas {
+    canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 }
 
