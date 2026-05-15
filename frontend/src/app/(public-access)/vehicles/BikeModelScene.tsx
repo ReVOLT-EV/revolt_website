@@ -14,12 +14,12 @@ type BikeModelSceneProps = {
     name: string;
 };
 
-export const BikeModelScene = ({ model, name }: BikeModelSceneProps) => {
+export const BikeModelScene = ({ name }: BikeModelSceneProps) => {
     return (
         <div className={vehicle_style.scene_canvas} aria-label={`${name} 3D scene placeholder`}>
             <div className={vehicle_style.scene_placeholder}>
                 <span>In Development</span>
-                <p>{model ? `${model.type.toUpperCase()} model path ready` : "Interactive model coming soon"}</p>
+                <p>Interactive model coming soon</p>
             </div>
         </div>
     );
