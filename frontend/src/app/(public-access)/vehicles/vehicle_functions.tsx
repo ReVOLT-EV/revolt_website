@@ -23,7 +23,7 @@ export type Vehicle = {
     identity: VehicleTile[];
     specs: VehicleTile[];
     history: string[];
-    pastRaces: string[];
+    competitions: string[];
 };
 
 // Bike object - requires unique id
@@ -41,15 +41,13 @@ export const vehicles: Vehicle[] = [
             alt: "ReVOLT electric racing bike development footage",
         },
         identity: [
-            { label: "Organization", value: "ReVOLT" },
-            { label: "School", value: "University of Calgary" },
             { label: "Vehicle", value: "Electric racing bike" },
             { label: "Season", value: "2025-2026" },
+            { label: "Project Stage", value: "In development" },
         ],
         specs: [
-            { label: "Base bike frame", value: "TBD" },
+            { label: "Base bike frame", value: "Kawasaki Ninja" },
             { label: "Battery specs", value: "TBD" },
-            { label: "Race results", value: "TBD" },
             { label: "Motor system", value: "TBD" },
         ],
         history: [
@@ -57,7 +55,7 @@ export const vehicles: Vehicle[] = [
             "",
             "",
         ],
-        pastRaces: [
+        competitions: [
             "TBD",
         ],
     },
@@ -142,10 +140,10 @@ export const VehicleCard = ({ vehicle, index }: VehicleCardProps) => {
                             <p key={`${vehicle.id}-history-${historyIndex}`}>{paragraph}</p>
                         ))}
                         <div className={vehicle_style.milestone_block}>
-                            <h3>Past Races</h3>
+                            <h3>Competitions</h3>
                             <ol>
-                                {vehicle.pastRaces.map((race, raceIndex) => (
-                                    <li key={`${vehicle.id}-race-${raceIndex}`}>{race}</li>
+                                {vehicle.competitions.map((competition, competitionIndex) => (
+                                    <li key={`${vehicle.id}-competition-${competitionIndex}`}>{competition}</li>
                                 ))}
                             </ol>
                         </div>
