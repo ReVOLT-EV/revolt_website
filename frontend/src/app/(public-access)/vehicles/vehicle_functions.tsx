@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 
 import vehicle_style from "@/styles/Vehicle.module.scss";
+import { VehicleInteractiveMedia } from "./VehicleInteractiveMedia";
 
 export type VehicleMedia = {
     type: "image" | "video";
@@ -66,48 +66,13 @@ type VehicleCardProps = {
     index: number;
 };
 
-const VehicleMediaBlock = ({ media, name }: { media?: VehicleMedia; name: string }) => {
-    if (!media) {
-        return (
-            <div className={vehicle_style.media_placeholder} aria-label={`${name} media placeholder`}>
-                <span>EV</span>
-            </div>
-        );
-    }
-
-    if (media.type === "video") {
-        return (
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className={vehicle_style.vehicle_media}
-                aria-label={media.alt}
-            >
-                <source src={media.src} type="video/mp4" />
-            </video>
-        );
-    }
-
-    return (
-        <Image
-            src={media.src}
-            alt={media.alt}
-            fill
-            sizes="(max-width: 1050px) 92vw, 650px"
-            className={vehicle_style.vehicle_media}
-        />
-    );
-};
-
 export const VehicleCard = ({ vehicle, index }: VehicleCardProps) => {
     const isEven = index % 2 === 0;
 
     return (
         <article className={`${vehicle_style.vehicle_card} ${isEven ? vehicle_style.vehicle_card_even : vehicle_style.vehicle_card_odd}`}>
             <div className={vehicle_style.media_section}>
-                <VehicleMediaBlock media={vehicle.media} name={vehicle.name} />
+                <VehicleInteractiveMedia media={vehicle.media} name={vehicle.name} />
             </div>
 
             <div className={vehicle_style.content_section}>

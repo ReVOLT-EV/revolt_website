@@ -171,16 +171,63 @@ Tablet/Mobile Dimensions: Max Width - 1274px
 }
 
 .vehicle_media,
-.media_placeholder {
+.media_placeholder,
+.scene_placeholder {
     display: block;
     width: 100%;
     height: 100%;
     min-height: 430px;
-    object-fit: cover;
 
     @media screen and (max-width: 750px) {
         min-height: 300px;
     }
+}
+
+.interactive_media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+
+    @media screen and (max-width: 750px) {
+        min-height: 300px;
+    }
+}
+
+.vehicle_media {
+    object-fit: cover;
+}
+
+.media_switch {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(58px, 1fr));
+    gap: 3px;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+
+    button {
+        min-height: 34px;
+        padding: 0 14px;
+        color: rgb(225, 225, 225);
+        font-family: "Benzin-Regular";
+        font-size: 12px;
+        background: transparent;
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+    }
+}
+
+.active_switch {
+    color: white !important;
+    background: rgb(200, 0, 0) !important;
 }
 
 .media_placeholder {
@@ -195,6 +242,32 @@ Tablet/Mobile Dimensions: Max Width - 1274px
         font-family: "Benzin-Bold";
         font-size: 80px;
         color: white;
+    }
+}
+
+.scene_placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    color: white;
+    text-align: center;
+    background:
+        linear-gradient(135deg, rgba(32, 32, 32, 0.96), rgba(6, 6, 6, 0.96)),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 36px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 36px);
+
+    span {
+        font-family: "Benzin-Bold";
+        font-size: clamp(30px, 4vw, 48px);
+    }
+
+    p {
+        margin: 12px 0 0;
+        color: rgb(205, 205, 205);
+        font-family: "Helvetica-Regular";
+        font-size: 16px;
     }
 }
 
